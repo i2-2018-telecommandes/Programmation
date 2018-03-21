@@ -5,7 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane focusTraversable="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.systeme.ControllerPrincipal">
+<BorderPane focusTraversable="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.systeme.ControllerPrincipal">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -15,7 +15,22 @@
               <MenuItem id="menuItemQuitter" mnemonicParsing="false" onAction="#doQuitter" text="Quitter" />
             </items>
           </Menu>
-          <Menu fx:id="menuDonnees" mnemonicParsing="false" text="Données">
+            <Menu fx:id="menuVente" mnemonicParsing="false" text="Gestion de ventes">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Vente" />
+              </items>
+            </Menu>
+            <Menu fx:id="menuStock" mnemonicParsing="false" text="Gestion de stock">
+              <items>
+                <MenuItem fx:id="menuItemMarque" mnemonicParsing="false" text="Marque" />
+                  <Menu fx:id="menuItemTeleviseur" mnemonicParsing="false" text="Televiseur">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+              </items>
+            </Menu>
+          <Menu fx:id="menuDonnees" mnemonicParsing="false" text="Gestion de données annexes">
                <items>
                   <MenuItem fx:id="menuItemComptes" mnemonicParsing="false" onAction="#doAfficherListeComptes" text="Comptes" />
                </items>

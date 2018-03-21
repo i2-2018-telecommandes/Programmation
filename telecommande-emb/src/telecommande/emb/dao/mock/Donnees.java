@@ -49,7 +49,7 @@ public class Donnees {
 		
 		// Comptes
 		
-		Compte compte;
+	/*	Compte compte;
 		compte = new Compte( 1, "geek", "geek", "geek@3il.fr" );
 		compte.getRoles().add( Roles.ADMINISTRATEUR  );
 		compte.getRoles().add( Roles.UTILISATEUR  );
@@ -66,7 +66,7 @@ public class Donnees {
 		compte = new Compte(4, "_" + this.getClass().getPackage().getName(), "xxx", "xxx@3il.fr");
 		compte.getRoles().add( Roles.UTILISATEUR  );
 		mapComptes.put( compte.getId(), compte );
-
+*/
     	
     	// Personnes
 

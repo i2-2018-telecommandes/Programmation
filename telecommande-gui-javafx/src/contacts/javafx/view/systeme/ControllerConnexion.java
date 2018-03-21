@@ -61,8 +61,9 @@ public class ControllerConnexion {
 	public void doConnexion()  {
 		managerGui.execTask( () -> {
 			modelConnexion.ouvrirSessionUtilisateur();
+			String pseudo=modelConnexion.getCompteVue().getPseudo();
 			 Platform.runLater( () -> {
-         			modelInfo.titreProperty().set( "Bienvenue" );
+         			modelInfo.titreProperty().set( "Bienvenue "+pseudo);
         			modelInfo.messageProperty().set( "Connexion réussie" );
         			managerGui.showView(EnumView.Info);
              }) ;

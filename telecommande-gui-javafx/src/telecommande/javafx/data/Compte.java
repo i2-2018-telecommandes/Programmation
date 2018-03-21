@@ -14,8 +14,8 @@ public class Compte  {
 	// Données observables
 	
 	private final IntegerProperty	idUtilisateur			 = new SimpleIntegerProperty();
-	private final IntegerProperty	nom			 = new SimpleIntegerProperty();
-	private final IntegerProperty	prenom			 = new SimpleIntegerProperty();
+	private final StringProperty	nom			 = new SimpleStringProperty();
+	private final StringProperty	prenom			 = new SimpleStringProperty();
 	private final StringProperty	login		= new SimpleStringProperty();
 	private final StringProperty	MotPass	= new SimpleStringProperty();
 	private final StringProperty	email 		= new SimpleStringProperty();
@@ -97,6 +97,34 @@ public class Compte  {
 	public String toString() {
 		return getPseudo();
 	}
+	public final StringProperty nomProperty() {
+		return this.nom;
+	}
+	
+
+	public final String getNom() {
+		return this.nomProperty().get();
+	}
+	
+
+	public final void setNom(final String nom) {
+		this.nomProperty().set(nom);
+	}
+	
+
+	public final StringProperty prenomProperty() {
+		return this.prenom;
+	}
+	
+
+	public final String getPrenom() {
+		return this.prenomProperty().get();
+	}
+	
+
+	public final void setPrenom(final String prenom) {
+		this.prenomProperty().set(prenom);
+	}
 	
 	
 	// Constructeurs
@@ -104,11 +132,15 @@ public class Compte  {
 	public Compte() {
 	}
 
-	public Compte( int id, String pseudo, String motDePasse, String email ) {
+	public Compte( int id, String pseudo, String motDePasse, String email ,String nom, String prenom) {
 		setId(id);
 		setPseudo(pseudo);
 		setMotDePasse(motDePasse);
 		setEmail(email);
+		setNom(nom);
+		setPrenom(prenom);
 	}
+
+
 	
 }

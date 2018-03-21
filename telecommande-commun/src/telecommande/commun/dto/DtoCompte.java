@@ -31,11 +31,13 @@ public class DtoCompte implements Serializable  {
 	public DtoCompte() {
 	}
 
-	public DtoCompte(int id, String pseudo, String motDePasse, String email ) {
+	public DtoCompte(int id, String pseudo, String motDePasse, String email,String nom,String prenom ) {
 		this.id = id;
 		this.login = pseudo;
 		this.MotPass = motDePasse;
 		this.email = email;
+		this.nom=nom;
+		this.prenom=prenom;
 	}
 	
 	
@@ -65,6 +67,38 @@ public class DtoCompte implements Serializable  {
 		this.MotPass = motDePasse;
 	}
 	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getMotPass() {
+		return MotPass;
+	}
+
+	public void setMotPass(String motPass) {
+		MotPass = motPass;
+	}
+
 	public String getEmail() {
 		return email;
 	}

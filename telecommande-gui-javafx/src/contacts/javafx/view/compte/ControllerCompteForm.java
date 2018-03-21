@@ -32,6 +32,10 @@ public class ControllerCompteForm {
 	@FXML
 	private TextField			textFieldPseudo;
 	@FXML
+	private TextField			textFieldNom;
+	@FXML
+	private TextField			textFieldPrenom;
+	@FXML
 	private TextField			textFieldMotDePasse;
 	@FXML
 	private TextField			textFieldEmail;
@@ -69,7 +73,8 @@ public class ControllerCompteForm {
 		textFieldPseudo.textProperty().bindBidirectional( compteVue.pseudoProperty() );
 		textFieldMotDePasse.textProperty().bindBidirectional( compteVue.motDePasseProperty() );
 		textFieldEmail.textProperty().bindBidirectional( compteVue.emailProperty() );
-
+        textFieldNom.textProperty().bindBidirectional(compteVue.nomProperty());
+        textFieldNom.textProperty().bindBidirectional(compteVue.prenomProperty());
 		
 		// Configuration de l'objet ListView
 

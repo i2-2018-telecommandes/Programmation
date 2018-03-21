@@ -48,7 +48,7 @@ public class Donnees {
 		
 		
 		// Comptes
-		
+	/*	
 		DtoCompte compte;
 		compte = new DtoCompte( 1, "geek", "geek", "geek@3il.fr" );
 		compte.getRoles().add( Roles.ADMINISTRATEUR  );
@@ -67,7 +67,7 @@ public class Donnees {
 		compte.getRoles().add( Roles.UTILISATEUR  );
 		mapComptes.put( compte.getId(), compte );
 
-    	
+    	*/
     	// Personnes
 
         DtoPersonne personne;

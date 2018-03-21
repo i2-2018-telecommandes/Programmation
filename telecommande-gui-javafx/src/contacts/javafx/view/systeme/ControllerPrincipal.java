@@ -20,6 +20,14 @@ public class ControllerPrincipal  {
 	private Menu 		menuDonnees;
 	@FXML
 	private MenuItem	menuItemComptes;
+	@FXML
+	private Menu        menuVente;
+	@FXML
+	private Menu        menuStock;
+	@FXML
+	private MenuItem	menuItemMarque;
+	@FXML
+	private MenuItem	menuItemTeleviseur;
 
 	
 	// Autres champs
@@ -84,13 +92,22 @@ public class ControllerPrincipal  {
 		
 		menuDonnees.setVisible(false);
 		menuItemComptes.setVisible(false);
+		menuVente.setVisible(false);
+		menuStock.setVisible(false);
 		
 		if( modelConnexion.getCompteConnecte() != null ) {
 			menuItemSeDeconnecter.setDisable(false);
-			if( modelConnexion.getCompteConnecte().isInRole( Roles.UTILISATEUR) ) {
-				menuDonnees.setVisible(true);
+			if( modelConnexion.getCompteConnecte().isInRole( Roles.STOCK) ) {
+				//menuDonnees.setVisible(true);
+				menuStock.setVisible(true);
+				menuItemMarque.setVisible(true);
+				menuItemTeleviseur.setVisible(true);
 			}
-			if( modelConnexion.getCompteConnecte().isInRole( Roles.ADMINISTRATEUR ) ) {
+			if( modelConnexion.getCompteConnecte().isInRole( Roles.VENTE) ) {
+				//menuDonnees.setVisible(true);
+				menuVente.setVisible(true);
+			}
+			if( modelConnexion.getCompteConnecte().isInRole( Roles.DONNEES ) ) {
 				menuDonnees.setVisible(true);
 				menuItemComptes.setVisible(true);
 			}

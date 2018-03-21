@@ -50,11 +50,13 @@ public class DaoCompte implements IDaoCompte {
 			cn = dataSource.getConnection();
 
 			// Insère le compte
-			sql = "INSERT INTO utilisateur ( login, MotPass, mail ) VALUES ( ?, ?, ? )";
+			sql = "INSERT INTO utilisateur ( login, MotPass, mail,nom,prenom ) VALUES ( ?, ?, ?,?,? )";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS  );
 			stmt.setString(	1, compte.getPseudo() );
 			stmt.setString(	2, compte.getMotDePasse() );
 			stmt.setString(	3, compte.getEmail() );
+			stmt.setString(	4, compte.getNom() );
+			stmt.setString(	5, compte.getPrenom() );
 			stmt.executeUpdate();
 
 			// Récupère l'identifiant généré par le SGBD
@@ -87,12 +89,14 @@ public class DaoCompte implements IDaoCompte {
 			cn = dataSource.getConnection();
 
 			// Modifie le compte
-			sql = "UPDATE utilisateur SET login = ?, MotPass = ?, mail = ? WHERE Idutilisateur =  ?";
+			sql = "UPDATE utilisateur SET login = ?, MotPass = ?, mail = ?, nom= ?, prenom= ? WHERE Idutilisateur =  ?";
 			stmt = cn.prepareStatement( sql );
 			stmt.setString(	1, compte.getPseudo() );
 			stmt.setString(	2, compte.getMotDePasse() );
 			stmt.setString(	3, compte.getEmail() );
 			stmt.setInt(	4, compte.getId() );
+			stmt.setString(	5, compte.getNom() );
+			stmt.setString(	6, compte.getPrenom() );
 			stmt.executeUpdate();
 			
 		} catch (SQLException e) {

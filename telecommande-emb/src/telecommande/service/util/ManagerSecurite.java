@@ -37,8 +37,9 @@ public class ManagerSecurite implements IManagerSecurite, Serializable {
 		if ( 
 				compteConnecté == null
 				|| (
-						! compteConnecté.isInRole( Roles.UTILISATEUR )
-						&& ! compteConnecté.isInRole( Roles.ADMINISTRATEUR ) 
+						! compteConnecté.isInRole( Roles.VENTE )
+						&& ! compteConnecté.isInRole( Roles.STOCK) 
+								&& ! compteConnecté.isInRole( Roles.DONNEES) 
 				)
 			) {
 			throw new ExceptionAutorisation();
@@ -50,7 +51,7 @@ public class ManagerSecurite implements IManagerSecurite, Serializable {
 	public void verifierAutorisationAdmin() throws ExceptionAutorisation {
 		if ( 
 				compteConnecté == null
-				|| ! compteConnecté.isInRole( Roles.ADMINISTRATEUR )
+				|| ! compteConnecté.isInRole( Roles.DONNEES )
 			) {
 			throw new ExceptionAutorisation();
 		}
@@ -63,7 +64,7 @@ public class ManagerSecurite implements IManagerSecurite, Serializable {
 		if ( 
 				compteConnecté == null
 				|| ( 
-						! compteConnecté.isInRole( Roles.ADMINISTRATEUR )
+						! compteConnecté.isInRole( Roles.DONNEES )
 						&& compteConnecté.getId() != idCompte
 				)
 			) {
