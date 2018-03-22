@@ -5,7 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane focusTraversable="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.systeme.ControllerPrincipal">
+<BorderPane focusTraversable="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.systeme.ControllerPrincipal">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -22,7 +22,7 @@
             </Menu>
             <Menu fx:id="menuStock" mnemonicParsing="false" text="Gestion de stock">
               <items>
-                <MenuItem fx:id="menuItemMarque" mnemonicParsing="false" text="Marque" />
+                <MenuItem fx:id="menuItemMarque" mnemonicParsing="false" onAction="#doAfficherListeMarque" text="Marque" />
                   <Menu fx:id="menuItemTeleviseur" mnemonicParsing="false" text="Televiseur">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Action 1" />

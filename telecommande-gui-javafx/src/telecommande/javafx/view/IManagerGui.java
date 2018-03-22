@@ -1,6 +1,6 @@
-package contacts.javafx.view;
+package telecommande.javafx.view;
 
-import contacts.javafx.view.ManagerGuiAbstract.RunnableWithException;
+import telecommande.javafx.view.ManagerGuiAbstract.RunnableWithException;
 
 public interface IManagerGui {
 

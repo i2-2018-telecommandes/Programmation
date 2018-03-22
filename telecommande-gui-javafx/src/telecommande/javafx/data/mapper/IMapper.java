@@ -7,7 +7,9 @@ import org.mapstruct.factory.Mappers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import telecommande.commun.dto.DtoCompte;
+import telecommande.commun.dto.DtoMarque;
 import telecommande.javafx.data.Compte;
+import telecommande.javafx.data.Marque;
    
 
 @Mapper( uses=IMapper.FactoryObsservableList.class  )
@@ -24,6 +26,14 @@ public interface IMapper {
 	
 	Compte update( Compte source, @MappingTarget Compte target );
 	
+	// Marque
+	
+		Marque map( DtoMarque source );
+		
+		DtoMarque map( Marque source );
+		
+		Marque update( Marque source, @MappingTarget Marque target );
+		
 	
     // Classe auxiliaire
     

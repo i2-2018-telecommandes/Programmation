@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="paneRoot" prefHeight="512.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.compte.ControllerCompteForm">
+<AnchorPane fx:id="paneRoot" prefHeight="512.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.marque.ControllerMarqueForm">
    <children>
       <Label alignment="CENTER" styleClass="titre-vue" text="Marque" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
       <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutY="66.0" prefHeight="365.0" prefWidth="398.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
@@ -18,7 +18,7 @@
                   <Label layoutX="3.0" layoutY="18.0" text="Id :" />
                   <TextField fx:id="textFieldId" editable="false" focusTraversable="false" layoutX="89.0" layoutY="14.0" prefHeight="25.0" prefWidth="45.0" />
                   <HBox alignment="CENTER" layoutX="56.0" layoutY="318.0" prefHeight="60.0" prefWidth="200.0" spacing="10.0" />
-                  <TextField layoutX="89.0" layoutY="82.0" prefHeight="25.0" prefWidth="117.0" />
+                  <TextField fx:id="textFieldNom" layoutX="89.0" layoutY="82.0" prefHeight="25.0" prefWidth="117.0" />
                   <Label layoutX="-2.0" layoutY="77.0" text="Nom" />
                   <Button defaultButton="true" layoutX="33.0" layoutY="172.0" mnemonicParsing="false" onAction="#doValider" prefHeight="25.0" prefWidth="60.0" text="OK" />
                   <Button cancelButton="true" layoutX="152.0" layoutY="169.0" mnemonicParsing="false" onAction="#doAnnuler" text="Annuler" />

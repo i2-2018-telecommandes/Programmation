@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="paneRoot" prefHeight="512.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.compte.ControllerCompteForm">
+<AnchorPane fx:id="paneRoot" prefHeight="512.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.compte.ControllerCompteForm">
    <children>
       <Label alignment="CENTER" styleClass="titre-vue" text="Compte" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
       <FlowPane alignment="CENTER" columnHalignment="CENTER" layoutY="66.0" prefHeight="365.0" prefWidth="398.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">

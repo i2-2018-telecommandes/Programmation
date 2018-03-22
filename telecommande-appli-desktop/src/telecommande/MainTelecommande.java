@@ -9,11 +9,11 @@ import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
-import contacts.javafx.view.IManagerGui;
 import telecommande.commun.service.IContextService;
 import telecommande.dao.jdbc.util.DataSourceSingleConnection;
 import telecommande.emb.dao.IContextDao;
 import telecommande.javafx.model.IContextModel;
+import telecommande.javafx.view.IManagerGui;
 
 
 public class MainTelecommande {
@@ -56,7 +56,7 @@ public class MainTelecommande {
 			contextModel = new telecommande.javafx.model.standard.ContextModel( contextService );
 			
 			// ManagerGui
-			managerGui = new contacts.javafx.view.ManagerGuiClassic( contextModel );
+			managerGui = new telecommande.javafx.view.ManagerGuiClassic( contextModel );
 			
 			// Libère les ressources à la fermeture de l'application
 	    	Runtime.getRuntime().addShutdownHook(new Thread(

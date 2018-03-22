@@ -1,4 +1,4 @@
-package contacts.javafx.view;
+package telecommande.javafx.view;
 
 import javafx.scene.layout.Pane;
 
@@ -12,6 +12,8 @@ public enum EnumView {
 	Connexion		( "systeme/ViewConnexion.fxml" ),
 	CompteListe		( "compte/ViewCompteListe.fxml" ),
 	CompteForm		( "compte/ViewCompteForm.fxml" ),
+	MarqueListe     ("marque/ViewMarqueListe.fxml"),
+	MarqueForm      ("marque/ViewMarqueForm.fxml")
 	;
 
 	

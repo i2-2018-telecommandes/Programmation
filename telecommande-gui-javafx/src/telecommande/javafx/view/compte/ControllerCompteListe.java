@@ -1,7 +1,5 @@
-package contacts.javafx.view.compte;
+package telecommande.javafx.view.compte;
 
-import contacts.javafx.view.EnumView;
-import contacts.javafx.view.IManagerGui;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,6 +10,8 @@ import javafx.scene.input.MouseEvent;
 import telecommande.commun.util.ExceptionValidation;
 import telecommande.javafx.data.Compte;
 import telecommande.javafx.model.IModelCompte;
+import telecommande.javafx.view.EnumView;
+import telecommande.javafx.view.IManagerGui;
 
 
 public class ControllerCompteListe  {

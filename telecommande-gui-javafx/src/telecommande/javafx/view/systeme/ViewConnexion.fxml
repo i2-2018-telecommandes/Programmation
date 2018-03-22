@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="318.0" prefWidth="337.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.systeme.ControllerConnexion">
+<AnchorPane prefHeight="318.0" prefWidth="337.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.systeme.ControllerConnexion">
    <children>
       <Label alignment="CENTER" styleClass="titre-vue" text="ELECTROSTOCK" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
       <FlowPane alignment="CENTER" layoutY="76.0" prefHeight="143.0" prefWidth="337.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">

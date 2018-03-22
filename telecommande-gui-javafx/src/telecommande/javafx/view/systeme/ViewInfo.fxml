@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="323.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.javafx.view.systeme.ControllerInfo">
+<AnchorPane prefHeight="323.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.systeme.ControllerInfo">
    <children>
       <Label fx:id="labelTitre" alignment="CENTER" styleClass="titre-vue" text="Titre" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
       <VBox alignment="CENTER" layoutY="63.0" prefHeight="224.0" prefWidth="357.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="63.0">

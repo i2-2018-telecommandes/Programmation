@@ -1,4 +1,4 @@
-package contacts.javafx.view.systeme;
+package telecommande.javafx.view.systeme;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

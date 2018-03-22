@@ -1,7 +1,5 @@
 package telecommande.javafx.view.marque;
 
-import contacts.javafx.view.EnumView;
-import contacts.javafx.view.IManagerGui;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,12 +8,14 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import telecommande.commun.util.ExceptionValidation;
-import telecommande.javafx.data.Compte;
-import telecommande.javafx.model.IModelCompte;
+import telecommande.javafx.data.Marque;
+import telecommande.javafx.model.IModelMarque;
+import telecommande.javafx.view.EnumView;
+import telecommande.javafx.view.IManagerGui;
 
 public class ControllerMarqueListe {
 
-/*
+
 
 
 
@@ -25,20 +25,20 @@ public class ControllerMarqueListe {
 	
 	// Composants de la vue
 
-	//@FXML
-	//private ListView<Compt>
-	//@FXML
+	@FXML
+	private ListView<Marque> listView ;
+	
+	@FXML
 	private Button				buttonModifier;
 	@FXML
 	private Button				buttonSupprimer;
 	@FXML
 	private Button				buttonMemos;
-
 	
 	// Autres champs
 	
 	private IManagerGui			managerGui;
-	private IModelCompte		modelCompte;
+	private IModelMarque		modelMarque;
 
 	
 	// Injecteurs
@@ -47,8 +47,8 @@ public class ControllerMarqueListe {
 		this.managerGui = managerGui;
 	}
 	
-	public void setModelCompte(IModelCompte modelCompte) {
-		this.modelCompte = modelCompte;
+	public void setModelMarque(IModelMarque modelMarque) {
+		this.modelMarque = modelMarque;
 	}
 	
 	
@@ -59,18 +59,18 @@ public class ControllerMarqueListe {
 		// Configuration de l'objet ListView
 		
 		// Data binding
-		listView.setItems( modelCompte.getComptes() );
+		listView.setItems( modelMarque.getMarques() );
 
 		// Affichage
 		listView.setCellFactory( (list) -> {
-		    return new ListCell<Compte>() {
+		    return new ListCell<Marque>() {
 		        @Override
-		        protected void updateItem(Compte item, boolean empty) {
+		        protected void updateItem(Marque item, boolean empty) {
 		            super.updateItem(item, empty);
 		            if (item == null) {
 		                setText(null);
 		            } else {
-		                setText(item.pseudoProperty().get() );
+		                setText(item.nomProperty().get() );
 		            }
 		        }
 		    };
@@ -78,12 +78,12 @@ public class ControllerMarqueListe {
 
 		// Comportement si modificaiton de la séleciton
 		listView.getSelectionModel().getSelectedItems().addListener( 
-				(ListChangeListener<Compte>) (c) -> {
+				(ListChangeListener<Marque>) (c) -> {
 					 configurerBoutons();					
 		});
 
 		// Comportement si changement du contenu
-		listView.getItems().addListener( (ListChangeListener<Compte>) (c) -> {
+		listView.getItems().addListener( (ListChangeListener<Marque>) (c) -> {
 			c.next();
 			// Après insertion d'un élément, le sélectionne
 			// Après suppression d'un élément, sélectionne le suivant
@@ -102,27 +102,27 @@ public class ControllerMarqueListe {
 
 	@FXML
 	private void doActualiser() {
-		modelCompte.actualiserListe();
+		modelMarque.actualiserListe();
 		listView.getSelectionModel().clearSelection();;
 	}
 
 	@FXML
 	private void doAjouter() {
-		modelCompte.preparerAjouter();
-		managerGui.showView( EnumView.CompteForm );
+		modelMarque.preparerAjouter();
+		managerGui.showView( EnumView.MarqueForm );
 	}
 
 	@FXML
 	private void doModifier() {
-		modelCompte.preparerModifier( listView.getSelectionModel().getSelectedItem() );
-		managerGui.showView( EnumView.CompteForm );
+		modelMarque.preparerModifier( listView.getSelectionModel().getSelectedItem() );
+		managerGui.showView( EnumView.MarqueForm );
 	}
 
 	@FXML
 	private void doSupprimer() throws ExceptionValidation {
 		boolean reponse = managerGui.demanderConfirmation( "Confirmez-vous la suppresion ?" );
 		if ( reponse ) {
-			modelCompte.supprimer( listView.getSelectionModel().getSelectedItem() );
+			modelMarque.supprimer( listView.getSelectionModel().getSelectedItem() );
 		}
 	}
 	
@@ -152,5 +152,5 @@ public class ControllerMarqueListe {
 			buttonSupprimer.setDisable(true);
 		}
 	}
-*/
+
 }

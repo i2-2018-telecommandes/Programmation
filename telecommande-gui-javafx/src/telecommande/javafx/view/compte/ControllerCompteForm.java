@@ -1,10 +1,8 @@
-package contacts.javafx.view.compte;
+package telecommande.javafx.view.compte;
 
 import java.util.Collections;
 import java.util.Comparator;
 
-import contacts.javafx.view.EnumView;
-import contacts.javafx.view.IManagerGui;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
@@ -19,6 +17,8 @@ import telecommande.commun.util.ExceptionValidation;
 import telecommande.commun.util.Roles;
 import telecommande.javafx.data.Compte;
 import telecommande.javafx.model.IModelCompte;
+import telecommande.javafx.view.EnumView;
+import telecommande.javafx.view.IManagerGui;
 import telecommande.javafx.view.util.StringBindingId;
 
 
@@ -74,7 +74,7 @@ public class ControllerCompteForm {
 		textFieldMotDePasse.textProperty().bindBidirectional( compteVue.motDePasseProperty() );
 		textFieldEmail.textProperty().bindBidirectional( compteVue.emailProperty() );
         textFieldNom.textProperty().bindBidirectional(compteVue.nomProperty());
-        textFieldNom.textProperty().bindBidirectional(compteVue.prenomProperty());
+        textFieldPrenom.textProperty().bindBidirectional(compteVue.prenomProperty());
 		
 		// Configuration de l'objet ListView
 

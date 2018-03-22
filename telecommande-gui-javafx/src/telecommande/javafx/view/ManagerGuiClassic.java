@@ -1,4 +1,4 @@
-package contacts.javafx.view;
+package telecommande.javafx.view;
 
 import telecommande.javafx.model.IContextModel;
 

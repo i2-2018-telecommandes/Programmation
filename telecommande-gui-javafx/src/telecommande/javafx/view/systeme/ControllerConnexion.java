@@ -1,7 +1,5 @@
-package contacts.javafx.view.systeme;
+package telecommande.javafx.view.systeme;
 
-import contacts.javafx.view.EnumView;
-import contacts.javafx.view.IManagerGui;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -9,6 +7,8 @@ import javafx.scene.control.TextField;
 import telecommande.javafx.data.Compte;
 import telecommande.javafx.model.IModelConnexion;
 import telecommande.javafx.model.IModelInfo;
+import telecommande.javafx.view.EnumView;
+import telecommande.javafx.view.IManagerGui;
 
 
 public class ControllerConnexion {

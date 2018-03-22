@@ -1,12 +1,12 @@
-package contacts.javafx.view.systeme;
+package telecommande.javafx.view.systeme;
 
-import contacts.javafx.view.EnumView;
-import contacts.javafx.view.IManagerGui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import telecommande.commun.util.Roles;
 import telecommande.javafx.model.IModelConnexion;
+import telecommande.javafx.view.EnumView;
+import telecommande.javafx.view.IManagerGui;
 
 
 public class ControllerPrincipal  {
@@ -81,6 +81,10 @@ public class ControllerPrincipal  {
 	@FXML
 	public void doAfficherListeComptes() {
 		managerGui.showView( EnumView.CompteListe );;
+	}
+	
+	public void doAfficherListeMarque() {
+		managerGui.showView( EnumView.MarqueListe );;
 	}
 	
 
