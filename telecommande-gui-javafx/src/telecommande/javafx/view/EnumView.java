@@ -13,7 +13,13 @@ public enum EnumView {
 	CompteListe		( "compte/ViewCompteListe.fxml" ),
 	CompteForm		( "compte/ViewCompteForm.fxml" ),
 	MarqueListe     ("marque/ViewMarqueListe.fxml"),
-	MarqueForm      ("marque/ViewMarqueForm.fxml")
+	MarqueForm      ("marque/ViewMarqueForm.fxml"),
+	TeleviseurForm  ("televiseur/ViewTeleviseurForm.fxml"),
+	TeleviseurListe ("televiseur/ViewTeleviseurListe.fxml"),
+	FournisseurForm  ("fournisseur/ViewFournisseurForm.fxml"),
+	FournisseurListe ("televiseur/ViewFournisseurListe.fxml")
+	
+	
 	;
 
 	

@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import telecommande.commun.util.ExceptionValidation;
@@ -27,6 +29,7 @@ public class ControllerMarqueListe {
 
 	@FXML
 	private ListView<Marque> listView ;
+	private TableColumn< Marque,String> columnnom;
 	
 	@FXML
 	private Button				buttonModifier;
@@ -60,6 +63,7 @@ public class ControllerMarqueListe {
 		
 		// Data binding
 		listView.setItems( modelMarque.getMarques() );
+		
 
 		// Affichage
 		listView.setCellFactory( (list) -> {

@@ -28,7 +28,8 @@ public class ControllerPrincipal  {
 	private MenuItem	menuItemMarque;
 	@FXML
 	private MenuItem	menuItemTeleviseur;
-
+	@FXML
+	private MenuItem	menuItemFournisseur;
 	
 	// Autres champs
 	
@@ -82,12 +83,18 @@ public class ControllerPrincipal  {
 	public void doAfficherListeComptes() {
 		managerGui.showView( EnumView.CompteListe );;
 	}
-	
+	@FXML
 	public void doAfficherListeMarque() {
 		managerGui.showView( EnumView.MarqueListe );;
 	}
-	
-
+	@FXML
+	public void doAfficherListeTeleviseur() {
+		managerGui.showView( EnumView.TeleviseurListe );;
+	}
+	@FXML
+	public void doAfficherListeFournisseur() {
+		managerGui.showView( EnumView.FournisseurListe );;
+	}
 	// Méthodes auxiliaires
 	
 	private void configurerMenu() {

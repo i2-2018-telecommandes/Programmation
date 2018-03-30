@@ -11,12 +11,13 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import telecommande.dao.jdbc.util.UtilJdbc;
-import telecommande.emb.dao.IDaoMarque;
+import telecommande.emb.dao.IDaoTeleviseur;
 import telecommande.emb.dao.IDaoRole;
 import telecommande.emb.data.Marque;
+import telecommande.emb.data.Televiseur;
 
 
-public class DaoMarque implements IDaoMarque {
+public class DaoTeleviseur implements IDaoTeleviseur {
 
 	
 	// Champs
@@ -35,7 +36,7 @@ public class DaoMarque implements IDaoMarque {
 	// Actions
 	
 	@Override
-	public int inserer(Marque marque)  {
+	public int inserer(Televiseur televiseur)  {
 
 		Connection			cn		= null;
 		PreparedStatement	stmt	= null;
@@ -45,17 +46,17 @@ public class DaoMarque implements IDaoMarque {
 		try {
 			cn = dataSource.getConnection();
 
-			// Insère le marque
-			sql = "INSERT INTO Marque nom  VALUES ( ?)";
+			// Insère le televiseur
+			sql = "INSERT INTO Televiseur nom  VALUES ( ?)";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS  );
-			stmt.setString(	1, marque.getNom() );
+			stmt.setString(	1, televiseur.getNom() );
 			
 			stmt.executeUpdate();
 
 			// Récupère l'identifiant généré par le SGBD
 			rs = stmt.getGeneratedKeys();
 			rs.next();
-			marque.setIdMarque( rs.getInt(1) );
+			televiseur.setIdTeleviseur( rs.getInt(1) );
 	
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -66,12 +67,12 @@ public class DaoMarque implements IDaoMarque {
 	
 		
 		// Retourne l'identifiant
-		return marque.getIdMarque();
+		return televiseur.getIdTeleviseur();
 	}
 
 	
 	@Override
-	public void modifier(Marque marque)  {
+	public void modifier(Televiseur televiseur)  {
 
 		Connection			cn		= null;
 		PreparedStatement	stmt	= null;
@@ -80,12 +81,12 @@ public class DaoMarque implements IDaoMarque {
 		try {
 			cn = dataSource.getConnection();
 
-			// Modifie le marque
-			sql = "UPDATE marque SET nom = ? WHERE IdMarque =  ?";
+			// Modifie le televiseur
+			sql = "UPDATE televiseur SET nom = ? WHERE IdTeleviseur =  ?";
 			stmt = cn.prepareStatement( sql );
 			
-			stmt.setString(	1, marque.getNom() );
-			stmt.setInt(2, marque.getIdMarque() );
+			stmt.setString(	1, televiseur.getNom() );
+			stmt.setInt(2, televiseur.getIdTeleviseur() );
 			
 			stmt.executeUpdate();
 			
@@ -100,7 +101,7 @@ public class DaoMarque implements IDaoMarque {
 
 	
 	@Override
-	public void supprimer(int idMarque)  {
+	public void supprimer(int idTeleviseur)  {
 
 		Connection			cn		= null;
 		PreparedStatement	stmt	= null;
@@ -109,10 +110,10 @@ public class DaoMarque implements IDaoMarque {
 		try {
 			cn = dataSource.getConnection();
 
-			// Supprime le marque
-			sql = "DELETE FROM Marque WHERE Idmarque = ? ";
+			// Supprime le televiseur
+			sql = "DELETE FROM Televiseur WHERE Idteleviseur = ? ";
 			stmt = cn.prepareStatement( sql );
-			stmt.setInt( 1, idMarque );
+			stmt.setInt( 1, idTeleviseur );
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -124,7 +125,7 @@ public class DaoMarque implements IDaoMarque {
 
 	
 	@Override
-	public Marque retrouver(int idMarque)  {
+	public Televiseur retrouver(int idTeleviseur)  {
 
 		Connection			cn		= null;
 		PreparedStatement	stmt	= null;
@@ -134,13 +135,13 @@ public class DaoMarque implements IDaoMarque {
 		try {
 			cn = dataSource.getConnection();
 
-			sql = "SELECT * FROM Marque WHERE idMarque = ?";
+			sql = "SELECT * FROM Televiseur WHERE idTeleviseur = ?";
             stmt = cn.prepareStatement( sql );
-            stmt.setInt( 1, idMarque );
+            stmt.setInt( 1, idTeleviseur );
             rs = stmt.executeQuery();
 
             if ( rs.next() ) {
-                return construireMarque( rs );
+                return construireTeleviseur( rs );
             } else {
             	return null;
             }
@@ -153,8 +154,7 @@ public class DaoMarque implements IDaoMarque {
 
 	
 	
-	@Override
-	public List<Marque> listerTout()   {
+	public List<Marque> listerToutm()   {
 
 		Connection			cn		= null;
 		PreparedStatement	stmt	= null;
@@ -181,11 +181,8 @@ public class DaoMarque implements IDaoMarque {
 		}
 	}
 
-
-	
-
 	@Override
-	public boolean verifierUniciteNom( String nom, int idMarque )   {
+	public List<Televiseur> listerTout()   {
 
 		Connection			cn		= null;
 		PreparedStatement	stmt	= null;
@@ -195,15 +192,44 @@ public class DaoMarque implements IDaoMarque {
 		try {
 			cn = dataSource.getConnection();
 
-			sql = "SELECT COUNT(*) AS nbMarques"
-				+ " FROM Marque WHERE nom=? AND idMarque <> ?";
+			sql = "SELECT * FROM Televiseur ORDER BY nom";
+			stmt = cn.prepareStatement( sql );
+			rs = stmt.executeQuery();
+
+			List<Televiseur> televiseurs = new ArrayList<>();
+			while ( rs.next() ) {
+				televiseurs.add( construireTeleviseur(rs) );
+			}
+			return televiseurs;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			UtilJdbc.close( rs, stmt, cn );
+		}
+	}
+	
+
+	@Override
+	public boolean verifierUniciteNom( String nom, int idTeleviseur )   {
+
+		Connection			cn		= null;
+		PreparedStatement	stmt	= null;
+		ResultSet 			rs 		= null;
+		String				sql;
+
+		try {
+			cn = dataSource.getConnection();
+
+			sql = "SELECT COUNT(*) AS nbTeleviseurs"
+				+ " FROM Televiseur WHERE nom=? AND idTeleviseur <> ?";
 			stmt = cn.prepareStatement( sql );
 			stmt.setString(	1, nom );
-			stmt.setInt(	2, idMarque );
+			stmt.setInt(	2, idTeleviseur );
 			rs = stmt.executeQuery();
 			
 			rs.next();
-			return rs.getInt( "nbMarques" ) == 0;
+			return rs.getInt( "nbTeleviseurs" ) == 0;
 	
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -215,6 +241,17 @@ public class DaoMarque implements IDaoMarque {
 	
 	// Méthodes auxiliaires
 	
+	private Televiseur construireTeleviseur( ResultSet rs ) throws SQLException {
+		Televiseur televiseur = new Televiseur();
+		televiseur.setIdTeleviseur( rs.getInt( "IdTeleviseur" ) );
+		televiseur.setNom( rs.getString( "nom" ) );
+		televiseur.setReference( rs.getString( "reference" ) );
+		televiseur.setIdMarque(rs.getInt("IdMarque"));
+		
+		return televiseur;
+	}
+	
+	
 	private Marque construireMarque( ResultSet rs ) throws SQLException {
 		Marque marque = new Marque();
 		marque.setIdMarque( rs.getInt( "IdMarque" ) );
@@ -222,5 +259,4 @@ public class DaoMarque implements IDaoMarque {
 		
 		return marque;
 	}
-	
 }

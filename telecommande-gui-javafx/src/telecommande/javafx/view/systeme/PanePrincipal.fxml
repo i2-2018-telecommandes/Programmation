@@ -23,11 +23,8 @@
             <Menu fx:id="menuStock" mnemonicParsing="false" text="Gestion de stock">
               <items>
                 <MenuItem fx:id="menuItemMarque" mnemonicParsing="false" onAction="#doAfficherListeMarque" text="Marque" />
-                  <Menu fx:id="menuItemTeleviseur" mnemonicParsing="false" text="Televiseur">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                    </items>
-                  </Menu>
+                  <MenuItem fx:id="menuItemTeleviseur" mnemonicParsing="false" onAction="#doAfficherListeTeleviseur" text="Televiseur" />
+                  <MenuItem fx:id="menuItemFournisseur" mnemonicParsing="false" onAction="#doAfficherListeFournisseur" text="Fournisseur" />
               </items>
             </Menu>
           <Menu fx:id="menuDonnees" mnemonicParsing="false" text="Gestion de données annexes">

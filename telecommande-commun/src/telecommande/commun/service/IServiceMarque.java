@@ -12,9 +12,9 @@ public interface IServiceMarque {
 
 	void			modifier( DtoMarque dtoMarque ) throws ExceptionValidation; 
 
-	void			supprimer( int idUtilisateur ) throws ExceptionValidation;
+	void			supprimer( int idMarque ) throws ExceptionValidation;
 
-	DtoMarque 		retrouver( int idUtilisateur ) ;
+	DtoMarque 		retrouver( int idMarque ) ;
 
 	List<DtoMarque>	listerTout() ;
 
