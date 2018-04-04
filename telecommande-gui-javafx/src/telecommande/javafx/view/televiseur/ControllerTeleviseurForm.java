@@ -38,16 +38,16 @@ public class ControllerTeleviseurForm {
 	@FXML
 	private TextField			textFieldReference;
 	@FXML
-	private ComboBox<Marque>			comboIdMarque;
+	private ComboBox<Marque>			comboMarque;
 
 	
 	// Autres champs
 	
 	private IManagerGui			    managerGui;
 	private IModelTeleviseur		modelTeleviseur;
-	private IModelMarque		modelMarque;
+	private IModelMarque		    modelMarque;
 	private Televiseur 				televiseurVue;
-	String marqueVue;
+	
 	
 
 
@@ -62,8 +62,10 @@ public class ControllerTeleviseurForm {
 		this.modelTeleviseur = modelTeleviseur;
 		televiseurVue = modelTeleviseur.getTeleviseurVue();
 	}
-
-
+   
+	public void setModelMarque(IModelMarque modelMarque) {
+		this.modelMarque = modelMarque;
+	}
 	// Initialisation du Controller
 	
 	public void init() {
@@ -73,9 +75,9 @@ public class ControllerTeleviseurForm {
 		textFieldId.textProperty().bind(new StringBindingId(televiseurVue.idTeleviseurProperty()));
         textFieldNom.textProperty().bindBidirectional(televiseurVue.nomProperty());
         textFieldReference.textProperty().bindBidirectional(televiseurVue.referenceProperty());
-        comboIdMarque.valueProperty().unbindBidirectional( televiseurVue.MarqueProperty());
+        comboMarque.valueProperty().unbindBidirectional( televiseurVue.MarqueProperty());
         //comboIdMarque.valueProperty().bind(new StringBindingId(televiseurVue.idMarqueProperty()) );
-		comboIdMarque.setItems( modelMarque.getMarques() );
+		comboMarque.setItems( modelMarque.getMarques() );
         //combodIdMarque.getSelectionModel().selectedItemProperty().(televiseurVue.idMarqueProperty());
         //combodIdMarque.selectionModelProperty<   (televiseurVue.nomProperty());
 		// Configuration de l'objet ListView

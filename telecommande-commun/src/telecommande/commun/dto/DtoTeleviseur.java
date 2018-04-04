@@ -9,20 +9,20 @@ public class DtoTeleviseur {
 	
 	private String		reference;
 	
-	private int			idMarque;
+	private DtoMarque	   marque;
 	
 	
 	public 	DtoTeleviseur() {
 	}
 
-	public DtoTeleviseur(int idteleviseur,String nom,String reference,int idmarque) {
+	public DtoTeleviseur(int idteleviseur,String nom,String reference,DtoMarque marque) {
 		this.idTeleviseur = idteleviseur;
 		
 		this.nom=nom;
 		
 		this.reference=reference;
 		
-		this.idMarque=idmarque;
+		this.marque=marque;
 		
 	}
 
@@ -50,11 +50,11 @@ public class DtoTeleviseur {
 		this.reference = reference;
 	}
 
-	public int getIdMarque() {
-		return idTeleviseur;
+	public DtoMarque getMarque() {
+		return marque;
 	}
 
-	public void setIdMarque(int idMarque) {
-		this.idMarque = idMarque;
+	public void setDtoMarque(DtoMarque marque) {
+		this.marque = marque;
 	}
 }

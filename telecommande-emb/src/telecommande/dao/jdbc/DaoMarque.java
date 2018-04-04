@@ -46,7 +46,7 @@ public class DaoMarque implements IDaoMarque {
 			cn = dataSource.getConnection();
 
 			// Insère le marque
-			sql = "INSERT INTO Marque nom  VALUES ( ?)";
+			sql = "INSERT INTO Marque (nom)  VALUES ( ?)";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS  );
 			stmt.setString(	1, marque.getNom() );
 			

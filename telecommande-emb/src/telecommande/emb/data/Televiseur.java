@@ -8,14 +8,14 @@ public class Televiseur {
 	
 	private String		reference;
 	
-	private int			idMarque;
+	private Marque		marque;
 	
 	
 	public 	Televiseur() {
 	}
 
-	public Televiseur(int idteleviseur,String nom,String reference,int idmarque) {
-		this.idMarque = idmarque;
+	public Televiseur(int idteleviseur,String nom,String reference,Marque marque) {
+		this.marque = marque;
 		
 		this.nom=nom;
 		
@@ -51,14 +51,13 @@ public class Televiseur {
 		this.reference = reference;
 	}
 
-	public int getIdMarque() {
-		return idMarque;
+	public Marque getMarque() {
+		return marque;
 	}
 
-	public void setIdMarque(int idMarque) {
-		this.idMarque = idMarque;
+	public void setMarque(Marque marque) {
+		this.marque = marque;
 	}
-	
 	
 	
 }

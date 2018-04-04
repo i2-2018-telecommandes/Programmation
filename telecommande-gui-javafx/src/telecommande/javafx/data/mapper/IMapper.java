@@ -17,11 +17,9 @@ import telecommande.javafx.data.Televiseur;
 @Mapper( uses=IMapper.FactoryObsservableList.class  )
 public interface IMapper { 
 	
-	IMapper INSTANCE = Mappers.getMapper( IMapper.class );
 	
 	
 	// Compte
-	
 	Compte map( DtoCompte source );
 	
 	DtoCompte map( Compte source );

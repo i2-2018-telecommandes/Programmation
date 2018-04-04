@@ -87,6 +87,8 @@ public class Televiseur {
 
 	public final void setMarque(final Marque Marque) {
 		this.MarqueProperty().set(Marque);
-	}
-	
+   }
+
+
 }
+

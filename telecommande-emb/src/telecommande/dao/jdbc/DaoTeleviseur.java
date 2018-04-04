@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 
 import telecommande.dao.jdbc.util.UtilJdbc;
 import telecommande.emb.dao.IDaoTeleviseur;
+import telecommande.emb.dao.IDaoMarque;
 import telecommande.emb.dao.IDaoRole;
 import telecommande.emb.data.Marque;
 import telecommande.emb.data.Televiseur;
@@ -23,7 +24,7 @@ public class DaoTeleviseur implements IDaoTeleviseur {
 	// Champs
 
 	private DataSource		dataSource;
-	
+	private IDaoMarque      daomarque;
 
 	
 	// Injecteurs
@@ -153,33 +154,6 @@ public class DaoTeleviseur implements IDaoTeleviseur {
 	}
 
 	
-	
-	public List<Marque> listerToutm()   {
-
-		Connection			cn		= null;
-		PreparedStatement	stmt	= null;
-		ResultSet 			rs 		= null;
-		String				sql;
-
-		try {
-			cn = dataSource.getConnection();
-
-			sql = "SELECT * FROM Marque ORDER BY nom";
-			stmt = cn.prepareStatement( sql );
-			rs = stmt.executeQuery();
-
-			List<Marque> marques = new ArrayList<>();
-			while ( rs.next() ) {
-				marques.add( construireMarque(rs) );
-			}
-			return marques;
-
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			UtilJdbc.close( rs, stmt, cn );
-		}
-	}
 
 	@Override
 	public List<Televiseur> listerTout()   {
@@ -246,7 +220,7 @@ public class DaoTeleviseur implements IDaoTeleviseur {
 		televiseur.setIdTeleviseur( rs.getInt( "IdTeleviseur" ) );
 		televiseur.setNom( rs.getString( "nom" ) );
 		televiseur.setReference( rs.getString( "reference" ) );
-		televiseur.setIdMarque(rs.getInt("IdMarque"));
+		televiseur.setMarque(daomarque.retrouver(rs.getInt("IdMarque")));
 		
 		return televiseur;
 	}

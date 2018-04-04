@@ -26,7 +26,7 @@
                   <Label layoutY="152.0" text="Référence:" />
                   <Label layoutY="212.0" text="Marque" />
                   <TextField fx:id="textFieldReference" layoutX="90.0" layoutY="148.0" prefHeight="25.0" prefWidth="117.0" />
-                  <ComboBox fx:id="combodIdMarque" layoutX="89.0" layoutY="208.0" prefHeight="17.0" prefWidth="125.0" />
+                  <ComboBox fx:id="comboMarque" layoutX="89.0" layoutY="208.0" prefHeight="17.0" prefWidth="125.0" />
                </children>
             </Pane>
          </children>
