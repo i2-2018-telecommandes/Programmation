@@ -33,12 +33,12 @@ public class ModelTeleviseur implements IModelTeleviseur {
 	private final ObservableList<Marque> marques = FXCollections.observableArrayList( 
 			c ->  new Observable[] { c.nomProperty()  } 
 		);
-	private final Televiseur	televiseurVue = new Televiseur();
+	private final Televiseur televiseurVue = new Televiseur();
 	private final Marque	marqueVue = new Marque();
 	
 	// Objet courant
 
-	private Televiseur			televiseurCourant;
+	private Televiseur		televiseurCourant;
     private EnumModeVue		modeVue;
 	
 	
@@ -92,14 +92,6 @@ public class ModelTeleviseur implements IModelTeleviseur {
 				televiseurCourant = televiseur;
 			}
 		}
-		
-		/*for( DtoMarque dto : serviceMarque.listerTout() ) {
-			Marque marque = mapper.map( dto );
-			marques.add( marque );
-			if( marque.getIdMarque() == idCourant ) {
-				//marqueCourant = marque;
-			}
-		}*/
 		
 		
  	}

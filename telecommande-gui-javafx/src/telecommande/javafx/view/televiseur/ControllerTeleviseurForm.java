@@ -75,11 +75,9 @@ public class ControllerTeleviseurForm {
 		textFieldId.textProperty().bind(new StringBindingId(televiseurVue.idTeleviseurProperty()));
         textFieldNom.textProperty().bindBidirectional(televiseurVue.nomProperty());
         textFieldReference.textProperty().bindBidirectional(televiseurVue.referenceProperty());
-        comboMarque.valueProperty().unbindBidirectional( televiseurVue.MarqueProperty());
-        //comboIdMarque.valueProperty().bind(new StringBindingId(televiseurVue.idMarqueProperty()) );
+        comboMarque.valueProperty().bindBidirectional( televiseurVue.MarqueProperty());
 		comboMarque.setItems( modelMarque.getMarques() );
-        //combodIdMarque.getSelectionModel().selectedItemProperty().(televiseurVue.idMarqueProperty());
-        //combodIdMarque.selectionModelProperty<   (televiseurVue.nomProperty());
+        
 		// Configuration de l'objet ListView
 
 		// Data binding

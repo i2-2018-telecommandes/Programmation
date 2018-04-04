@@ -13,9 +13,9 @@ public class Televiseur {
 	private final IntegerProperty	idTeleviseur	 = new SimpleIntegerProperty();
 	private final StringProperty	nom			 = new SimpleStringProperty();
 	private final StringProperty	reference	= new SimpleStringProperty();
-	private final ObjectProperty<Marque>	Marque	= new SimpleObjectProperty<>();
+	private final ObjectProperty<Marque>	marque	= new SimpleObjectProperty<>();
 	private final IntegerProperty	idMarque	 = new SimpleIntegerProperty();
-	public final IntegerProperty idTeleviseurProperty() {
+		public final IntegerProperty idTeleviseurProperty() {
 		return this.idTeleviseur;
 	}
 	
@@ -67,16 +67,16 @@ public class Televiseur {
 	public Televiseur() {
 	}
 
-	public Televiseur( int idteleviseur,String nom,String reference,int idmarque) {
+	public Televiseur( int idteleviseur,String nom,String reference,Marque marque) {
 		setIdTeleviseur(idteleviseur);
 		setNom(nom);
 		setReference(reference);
-		setIdMarque(idmarque);
+		setMarque(marque);
 		
 	}
 
 	public final ObjectProperty<Marque> MarqueProperty() {
-		return this.Marque;
+		return this.marque;
 	}
 	
 
@@ -85,10 +85,9 @@ public class Televiseur {
 	}
 	
 
-	public final void setMarque(final Marque Marque) {
-		this.MarqueProperty().set(Marque);
+	public final void setMarque(final Marque marque) {
+     	this.MarqueProperty().set(marque);
    }
-
 
 }
 

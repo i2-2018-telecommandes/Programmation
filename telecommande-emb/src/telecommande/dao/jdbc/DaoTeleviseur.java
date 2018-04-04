@@ -13,8 +13,6 @@ import javax.sql.DataSource;
 import telecommande.dao.jdbc.util.UtilJdbc;
 import telecommande.emb.dao.IDaoTeleviseur;
 import telecommande.emb.dao.IDaoMarque;
-import telecommande.emb.dao.IDaoRole;
-import telecommande.emb.data.Marque;
 import telecommande.emb.data.Televiseur;
 
 
@@ -33,7 +31,9 @@ public class DaoTeleviseur implements IDaoTeleviseur {
 		this.dataSource = dataSource;
 	}
 	
-	
+	public void setDaomarque(IDaoMarque daomarque) {
+		this.daomarque = daomarque;
+	}
 	// Actions
 	
 	@Override
@@ -48,9 +48,11 @@ public class DaoTeleviseur implements IDaoTeleviseur {
 			cn = dataSource.getConnection();
 
 			// Insère le televiseur
-			sql = "INSERT INTO Televiseur nom  VALUES ( ?)";
+			sql = "INSERT INTO Televiseur (nom,reference,idmarque)  VALUES (?,?,?)";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS  );
 			stmt.setString(	1, televiseur.getNom() );
+			stmt.setString(	2, televiseur.getReference() );
+			stmt.setInt   ( 3, televiseur.getMarque().getIdMarque() );
 			
 			stmt.executeUpdate();
 
@@ -226,11 +228,5 @@ public class DaoTeleviseur implements IDaoTeleviseur {
 	}
 	
 	
-	private Marque construireMarque( ResultSet rs ) throws SQLException {
-		Marque marque = new Marque();
-		marque.setIdMarque( rs.getInt( "IdMarque" ) );
-		marque.setNom( rs.getString( "nom" ) );
-		
-		return marque;
-	}
+
 }

@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 
 import telecommande.dao.jdbc.util.UtilJdbc;
 import telecommande.emb.dao.IDaoMarque;
-import telecommande.emb.dao.IDaoRole;
 import telecommande.emb.data.Marque;
 
 

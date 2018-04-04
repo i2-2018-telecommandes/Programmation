@@ -13,10 +13,11 @@ import telecommande.javafx.data.Compte;
 import telecommande.javafx.data.Marque;
 import telecommande.javafx.data.Televiseur;
    
+import org.mapstruct.Mapper;
 
 @Mapper( uses=IMapper.FactoryObsservableList.class  )
 public interface IMapper { 
-	
+	IMapper INSTANCE = Mappers.getMapper( IMapper.class);
 	
 	
 	// Compte
@@ -42,7 +43,15 @@ public interface IMapper {
 				
 		Televiseur update( Televiseur source, @MappingTarget Televiseur target );
 		
-	
+	// Fournisseur
+		
+			/*	Fournisseur map( DtoFournisseur source );
+						
+				DtoFournisseur map( Fournisseur source );
+						
+				Fournisseur update( Fournisseur source, @MappingTarget Fournisseur target );
+				
+	*/
     // Classe auxiliaire
     
     public static class FactoryObsservableList {
