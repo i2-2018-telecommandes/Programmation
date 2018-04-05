@@ -14,6 +14,17 @@ public class Fournisseur {
 	private final StringProperty	nom			 = new SimpleStringProperty();
 	private final StringProperty	Mail	= new SimpleStringProperty();
 	private final StringProperty	Telephone	 = new SimpleStringProperty();
+	
+	public Fournisseur() {
+	}
+
+	public Fournisseur( int id,String nom,String mail,String Telephone) {
+		setIdFournisseur(id);
+		setNom(nom);
+		setMail(mail);
+		setTelephone(Telephone);		
+	}
+	
 	public final IntegerProperty idFournisseurProperty() {
 		return this.idFournisseur;
 	}

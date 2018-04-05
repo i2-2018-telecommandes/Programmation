@@ -94,11 +94,14 @@ public class ContextService implements IContextService  {
 						
 			} catch ( RuntimeException e) {
 				throw e;
-			} catch (Exception e) {
+			}
+			
+			catch (Exception e)
+			{
 				throw new RuntimeException(e);
 			}
 		}
 		return (T) bean;
 	}
 
-}
+	}

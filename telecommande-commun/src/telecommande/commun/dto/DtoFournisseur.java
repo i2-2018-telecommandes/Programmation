@@ -14,7 +14,7 @@ public class DtoFournisseur {
 	public 	DtoFournisseur() {
 	}
 
-	public DtoFournisseur(int idfournisseur,String nom,String mail,String telephone) {
+  public DtoFournisseur(int idfournisseur,String nom,String mail,String telephone) {
 		
 		this.idFournisseur = idfournisseur;
 		

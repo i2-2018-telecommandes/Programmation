@@ -9,14 +9,14 @@
 
 <AnchorPane fx:id="paneRoot" prefHeight="350.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.fournisseur.ControllerFournisseurListe">
    <children>
-      <Label alignment="CENTER" styleClass="titre-vue" text="Téleviseur" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
+      <Label alignment="CENTER" styleClass="titre-vue" text="Fournisseur" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
       <HBox alignment="CENTER" layoutY="75.0" prefHeight="200.0" prefWidth="405.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <children>
             <TableView fx:id="tableView" prefHeight="210.0" prefWidth="264.0">
               <columns>
                 <TableColumn fx:id="columnnom" prefWidth="79.0" text="Nom" />
-                <TableColumn fx:id="columnreference" minWidth="0.0" prefWidth="91.0" text="Telephone" />
-                  <TableColumn prefWidth="92.0" text="Mail" />
+                <TableColumn fx:id="columntelephone" minWidth="0.0" prefWidth="91.0" text="Telephone" />
+                  <TableColumn fx:id="columnmail" prefWidth="92.0" text="Mail" />
               </columns>
             </TableView>
          </children>

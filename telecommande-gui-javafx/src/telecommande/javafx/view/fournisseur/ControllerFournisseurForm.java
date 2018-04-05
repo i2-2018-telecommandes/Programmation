@@ -18,9 +18,9 @@ import javafx.scene.control.cell.CheckBoxListCell;
 import telecommande.commun.util.ExceptionValidation;
 import telecommande.commun.util.Roles;
 import telecommande.javafx.data.Marque;
-import telecommande.javafx.data.Televiseur;
+import telecommande.javafx.data.Fournisseur;
 import telecommande.javafx.model.IModelMarque;
-import telecommande.javafx.model.IModelTeleviseur;
+import telecommande.javafx.model.IModelFournisseur;
 import telecommande.javafx.view.EnumView;
 import telecommande.javafx.view.IManagerGui;
 import telecommande.javafx.view.util.StringBindingId;
@@ -36,18 +36,18 @@ public class ControllerFournisseurForm {
 	@FXML
 	private TextField			textFieldNom;
 	@FXML
-	private TextField			textFieldReference;
+	private TextField			textFieldMail;
 	@FXML
-	private ComboBox<Marque>			comboIdMarque;
+	private TextField			textFieldTelephone;
+	
 
 	
 	// Autres champs
 	
 	private IManagerGui			    managerGui;
-	private IModelTeleviseur		modelTeleviseur;
-	private IModelMarque		modelMarque;
-	private Televiseur 				televiseurVue;
-	String marqueVue;
+	private IModelFournisseur		modelFournisseur;
+	private Fournisseur 				fournisseurVue;
+
 	
 
 
@@ -58,9 +58,9 @@ public class ControllerFournisseurForm {
 		this.managerGui = managerGui;
 	}
 	
-	public void setModelTeleviseur(IModelTeleviseur modelTeleviseur) {
-		this.modelTeleviseur = modelTeleviseur;
-		televiseurVue = modelTeleviseur.getTeleviseurVue();
+	public void setModelFournisseur(IModelFournisseur modelFournisseur) {
+		this.modelFournisseur = modelFournisseur;
+		fournisseurVue = modelFournisseur.getFournisseurVue();
 	}
 
 
@@ -70,15 +70,11 @@ public class ControllerFournisseurForm {
 
 
 		// Data binding
-		textFieldId.textProperty().bind(new StringBindingId(televiseurVue.idTeleviseurProperty()));
-        textFieldNom.textProperty().bindBidirectional(televiseurVue.nomProperty());
-        textFieldReference.textProperty().bindBidirectional(televiseurVue.referenceProperty());
-        comboIdMarque.valueProperty().unbindBidirectional( televiseurVue.MarqueProperty());
-        //comboIdMarque.valueProperty().bind(new StringBindingId(televiseurVue.idMarqueProperty()) );
-		comboIdMarque.setItems( modelMarque.getMarques() );
-        //combodIdMarque.getSelectionModel().selectedItemProperty().(televiseurVue.idMarqueProperty());
-        //combodIdMarque.selectionModelProperty<   (televiseurVue.nomProperty());
-		// Configuration de l'objet ListView
+		textFieldId.textProperty().bind(new StringBindingId(fournisseurVue.idFournisseurProperty()));
+        textFieldNom.textProperty().bindBidirectional(fournisseurVue.nomProperty());
+        textFieldMail.textProperty().bindBidirectional(fournisseurVue.MailProperty());
+        textFieldTelephone.textProperty().bindBidirectional(fournisseurVue.TelephoneProperty());
+       
 
 		// Data binding
 
@@ -100,13 +96,13 @@ public class ControllerFournisseurForm {
 	
 	@FXML
 	private void doAnnuler() {
-		managerGui.showView( EnumView.TeleviseurListe );;
+		managerGui.showView( EnumView.FournisseurListe );;
 	}
 	
 	@FXML
 	private void doValider() throws ExceptionValidation  {
-		modelTeleviseur.validerMiseAJour();
-		managerGui.showView( EnumView.TeleviseurListe );;
+		modelFournisseur.validerMiseAJour();
+		managerGui.showView( EnumView.FournisseurListe );;
 	}
 
     

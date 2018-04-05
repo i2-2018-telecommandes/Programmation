@@ -4,9 +4,11 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import telecommande.commun.dto.DtoCompte;
+import telecommande.commun.dto.DtoFournisseur;
 import telecommande.commun.dto.DtoMarque;
 import telecommande.commun.dto.DtoTeleviseur;
 import telecommande.emb.data.Compte;
+import telecommande.emb.data.Fournisseur;
 import telecommande.emb.data.Marque;
 import telecommande.emb.data.Televiseur;
   
@@ -34,4 +36,10 @@ public interface IMapper {
 	Televiseur map( DtoTeleviseur source );
 			
 	DtoTeleviseur map( Televiseur source );
+	
+	// Fournisseurs
+	
+		Fournisseur map( DtoFournisseur source );
+			
+		DtoFournisseur map( Fournisseur source );
 }

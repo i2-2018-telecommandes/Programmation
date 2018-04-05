@@ -11,8 +11,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import telecommande.commun.util.ExceptionValidation;
-import telecommande.javafx.data.Televiseur;
-import telecommande.javafx.model.IModelTeleviseur;
+import telecommande.javafx.data.Fournisseur;
+import telecommande.javafx.model.IModelFournisseur;
 import telecommande.javafx.view.EnumView;
 import telecommande.javafx.view.IManagerGui;
 
@@ -29,15 +29,16 @@ public class ControllerFournisseurListe {
 	// Composants de la vue
 
 	@FXML
-	private TableView<Televiseur> tableView ;
+	private TableView<Fournisseur> tableView ;
 	@FXML
-	private TableColumn<Televiseur,String> columnnom ;
+	private TableColumn<Fournisseur,String> columnnom ;
 	@FXML
-	private TableColumn<Televiseur,String> columnreference ;
-
+	private TableColumn<Fournisseur,String> columnmail ;
+	@FXML
+	private TableColumn<Fournisseur,String> columntelephone ;
 	
 	@FXML
-	private ListView<Televiseur> listViewReference ;
+	private ListView<Fournisseur> listViewReference ;
 	
 	@FXML
 	private Button				buttonModifier;
@@ -49,7 +50,7 @@ public class ControllerFournisseurListe {
 	// Autres champs
 	
 	private IManagerGui			managerGui;
-	private IModelTeleviseur		modelTeleviseur;
+	private IModelFournisseur		modelFournisseur;
 
 	
 	// Injecteurs
@@ -58,8 +59,8 @@ public class ControllerFournisseurListe {
 		this.managerGui = managerGui;
 	}
 	
-	public void setModelTeleviseur(IModelTeleviseur modelTeleviseur) {
-		this.modelTeleviseur = modelTeleviseur;
+	public void setModelFournisseur(IModelFournisseur modelFournisseur) {
+		this.modelFournisseur = modelFournisseur;
 	}
 	
 	
@@ -70,19 +71,22 @@ public class ControllerFournisseurListe {
 		// Configuration de l'objet ListView
 		
 		// Data binding
-		tableView.setItems( modelTeleviseur.getTeleviseurs() );
+		tableView.setItems( modelFournisseur.getFournisseurs() );
 		
 		columnnom.setCellValueFactory( cellData -> cellData.getValue().nomProperty());
-		columnreference.setCellValueFactory( cellData -> cellData.getValue().referenceProperty());
+		columnmail.setCellValueFactory( cellData -> cellData.getValue().MailProperty());
+		columntelephone.setCellValueFactory( cellData -> cellData.getValue().TelephoneProperty());
+		
 		
 		// Affichage
 		columnnom.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
-		columnreference.setCellValueFactory(cellData -> cellData.getValue().referenceProperty());
+		columnmail.setCellValueFactory(cellData -> cellData.getValue().MailProperty());
+		columntelephone.setCellValueFactory(cellData -> cellData.getValue().TelephoneProperty());
 		
 		/*columnnom.setCellFactory( (list) -> {
-		    return new ListCell<Televiseur,String>() {
+		    return new ListCell<Fournisseur,String>() {
 		        @Override
-		        protected void updateItem(Televiseur item, boolean empty) {
+		        protected void updateItem(Fournisseur item, boolean empty) {
 		            super.updateItem(item, empty);
 		            if (item == null) {
 		                setText(null);
@@ -94,9 +98,9 @@ public class ControllerFournisseurListe {
 		});		
 
 		columnreference.setCellFactory( (list) -> {
-		    return new ListCell<Televiseur,	String>() {
+		    return new ListCell<Fournisseur,	String>() {
 		        @Override
-		        protected void updateItem(Televiseur item, boolean empty) {
+		        protected void updateItem(Fournisseur item, boolean empty) {
 		            super.updateItem(item, empty);
 		            if (item == null) {
 		                setText(null);
@@ -108,12 +112,12 @@ public class ControllerFournisseurListe {
 		});	*/
 		// Comportement si modificaiton de la séleciton
 		tableView.getSelectionModel().getSelectedItems().addListener( 
-				(ListChangeListener<Televiseur>) (c) -> {
+				(ListChangeListener<Fournisseur>) (c) -> {
 					 configurerBoutons();					
 		});
 
 		// Comportement si changement du contenu
-		tableView.getItems().addListener( (ListChangeListener<Televiseur>) (c) -> {
+		tableView.getItems().addListener( (ListChangeListener<Fournisseur>) (c) -> {
 			c.next();
 			// Après insertion d'un élément, le sélectionne
 			// Après suppression d'un élément, sélectionne le suivant
@@ -132,27 +136,27 @@ public class ControllerFournisseurListe {
 
 	@FXML
 	private void doActualiser() {
-		modelTeleviseur.actualiserListe();
+		modelFournisseur.actualiserListe();
 		tableView.getSelectionModel().clearSelection();;
 	}
 
 	@FXML
 	private void doAjouter() {
-		modelTeleviseur.preparerAjouter();
-		managerGui.showView( EnumView.TeleviseurForm );
+		modelFournisseur.preparerAjouter();
+		managerGui.showView( EnumView.FournisseurForm );
 	}
 
 	@FXML
 	private void doModifier() {
-		modelTeleviseur.preparerModifier( tableView.getSelectionModel().getSelectedItem() );
-		managerGui.showView( EnumView.TeleviseurForm );
+		modelFournisseur.preparerModifier( tableView.getSelectionModel().getSelectedItem() );
+		managerGui.showView( EnumView.FournisseurForm );
 	}
 
 	@FXML
 	private void doSupprimer() throws ExceptionValidation {
 		boolean reponse = managerGui.demanderConfirmation( "Confirmez-vous la suppresion ?" );
 		if ( reponse ) {
-			modelTeleviseur.supprimer( tableView.getSelectionModel().getSelectedItem() );
+			modelFournisseur.supprimer( tableView.getSelectionModel().getSelectedItem() );
 		}
 	}
 	

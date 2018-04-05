@@ -17,7 +17,7 @@ public enum EnumView {
 	TeleviseurForm  ("televiseur/ViewTeleviseurForm.fxml"),
 	TeleviseurListe ("televiseur/ViewTeleviseurListe.fxml"),
 	FournisseurForm  ("fournisseur/ViewFournisseurForm.fxml"),
-	FournisseurListe ("televiseur/ViewFournisseurListe.fxml")
+	FournisseurListe ("fournisseur/ViewFournisseurListe.fxml")
 	
 	
 	;
