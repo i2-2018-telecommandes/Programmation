@@ -51,7 +51,7 @@ public class ServiceMarque implements IServiceMarque {
 		
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			verifierValiditeDonnees( dtoMarque );
 
 			managerTransaction.begin();
@@ -69,7 +69,7 @@ public class ServiceMarque implements IServiceMarque {
 	public void modifier( DtoMarque dtoMarque ) throws ExceptionValidation { 
 		try {
 
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			verifierValiditeDonnees( dtoMarque );
 
 			managerTransaction.begin();
@@ -87,7 +87,7 @@ public class ServiceMarque implements IServiceMarque {
 	public void supprimer( int idMarque ) throws ExceptionValidation  {
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			
 
 			managerTransaction.begin();
@@ -105,7 +105,7 @@ public class ServiceMarque implements IServiceMarque {
 	public DtoMarque retrouver( int idMarque ) {
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			return mapper.map( daoMarque.retrouver(idMarque) );
 
 		} catch ( Exception e ) {
@@ -118,7 +118,7 @@ public class ServiceMarque implements IServiceMarque {
 	public List<DtoMarque> listerTout() {
 		try {
 
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			List<DtoMarque> liste = new ArrayList<>();
 			for( Marque marque : daoMarque.listerTout() ) {
 				liste.add( mapper.map( marque ) );

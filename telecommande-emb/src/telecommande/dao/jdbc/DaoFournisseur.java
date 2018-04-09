@@ -45,7 +45,7 @@ public class DaoFournisseur implements IDaoFournisseur {
 			cn = dataSource.getConnection();
 
 			// Insère le fournisseur
-			sql = "INSERT INTO Fournisseur (nom,mail,telephone)  VALUES (?,?,?,?)";
+			sql = "INSERT INTO Fournisseur (nom,email,telephone)  VALUES (?,?,?)";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS  );
 			stmt.setString(	1, fournisseur.getNom() );
 			stmt.setString(	2, fournisseur.getMail() );
@@ -81,12 +81,13 @@ public class DaoFournisseur implements IDaoFournisseur {
 			cn = dataSource.getConnection();
 
 			// Modifie le fournisseur
-			sql = "UPDATE fournisseur SET nom = ?,mail= ?,telephone= ?  WHERE IdFournisseur =  ?";
+			sql = "UPDATE fournisseur SET nom = ?,email= ?,telephone= ?  WHERE IdFournisseur =  ?";
 			stmt = cn.prepareStatement( sql );
 			
-			stmt.setString(	1, fournisseur.getNom() );
+			stmt.setString(1, fournisseur.getNom() );
 			stmt.setString(2, fournisseur.getMail() );
-			stmt.setString(	3, fournisseur.getTelephone() );
+			stmt.setString(3, fournisseur.getTelephone() );
+			stmt.setInt   (4, fournisseur.getIdFournisseur());
 			stmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -219,7 +220,7 @@ public class DaoFournisseur implements IDaoFournisseur {
 		Fournisseur fournisseur = new Fournisseur();
 		fournisseur.setIdFournisseur( rs.getInt( "IdFournisseur" ) );
 		fournisseur.setNom( rs.getString( "nom" ) );
-		fournisseur.setMail( rs.getString( "mail" ) );
+		fournisseur.setMail( rs.getString( "email" ) );
 		fournisseur.setTelephone(rs.getString("telephone"));
 		return fournisseur;
 	}

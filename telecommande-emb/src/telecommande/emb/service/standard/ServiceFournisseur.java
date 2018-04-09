@@ -14,7 +14,7 @@ import telecommande.service.util.IManagerSecurite;
 import telecommande.service.util.UtilServices;
 
 
-public class ServiceFounisseur implements IServiceFournisseur {
+public class ServiceFournisseur implements IServiceFournisseur {
 
 	
 	// Champs 
@@ -51,7 +51,7 @@ public class ServiceFounisseur implements IServiceFournisseur {
 		
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			verifierValiditeDonnees( dtoFournisseur );
 
 			managerTransaction.begin();
@@ -69,7 +69,7 @@ public class ServiceFounisseur implements IServiceFournisseur {
 	public void modifier( DtoFournisseur dtoFournisseur ) throws ExceptionValidation { 
 		try {
 
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			verifierValiditeDonnees( dtoFournisseur );
 
 			managerTransaction.begin();
@@ -87,7 +87,7 @@ public class ServiceFounisseur implements IServiceFournisseur {
 	public void supprimer( int idFournisseur ) throws ExceptionValidation  {
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			
 
 			managerTransaction.begin();
@@ -105,7 +105,7 @@ public class ServiceFounisseur implements IServiceFournisseur {
 	public DtoFournisseur retrouver( int idFournisseur ) {
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			return mapper.map( daoFournisseur.retrouver(idFournisseur) );
 
 		} catch ( Exception e ) {
@@ -118,7 +118,7 @@ public class ServiceFounisseur implements IServiceFournisseur {
 	public List<DtoFournisseur> listerTout() {
 		try {
 
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			List<DtoFournisseur> liste = new ArrayList<>();
 			for( Fournisseur fournisseur : daoFournisseur.listerTout() ) {
 				liste.add( mapper.map( fournisseur ) );

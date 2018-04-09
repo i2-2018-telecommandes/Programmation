@@ -51,7 +51,7 @@ public class ServiceTeleviseur implements IServiceTeleviseur {
 		
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			verifierValiditeDonnees( dtoTeleviseur );
 
 			managerTransaction.begin();
@@ -69,7 +69,7 @@ public class ServiceTeleviseur implements IServiceTeleviseur {
 	public void modifier( DtoTeleviseur dtoTeleviseur ) throws ExceptionValidation { 
 		try {
 
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			verifierValiditeDonnees( dtoTeleviseur );
 
 			managerTransaction.begin();
@@ -87,7 +87,7 @@ public class ServiceTeleviseur implements IServiceTeleviseur {
 	public void supprimer( int idTeleviseur ) throws ExceptionValidation  {
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			
 
 			managerTransaction.begin();
@@ -105,7 +105,7 @@ public class ServiceTeleviseur implements IServiceTeleviseur {
 	public DtoTeleviseur retrouver( int idTeleviseur ) {
 		try {
 			
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			return mapper.map( daoTeleviseur.retrouver(idTeleviseur) );
 
 		} catch ( Exception e ) {
@@ -118,7 +118,7 @@ public class ServiceTeleviseur implements IServiceTeleviseur {
 	public List<DtoTeleviseur> listerTout() {
 		try {
 
-			managerSecurite.verifierAutorisationAdmin();
+			//managerSecurite.verifierAutorisationAdmin();
 			List<DtoTeleviseur> liste = new ArrayList<>();
 			for( Televiseur televiseur : daoTeleviseur.listerTout() ) {
 				liste.add( mapper.map( televiseur ) );

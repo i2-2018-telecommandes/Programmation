@@ -46,7 +46,7 @@ public class ControllerFournisseurForm {
 	
 	private IManagerGui			    managerGui;
 	private IModelFournisseur		modelFournisseur;
-	private Fournisseur 				fournisseurVue;
+	private Fournisseur 			fournisseurVue;
 
 	
 
@@ -74,12 +74,6 @@ public class ControllerFournisseurForm {
         textFieldNom.textProperty().bindBidirectional(fournisseurVue.nomProperty());
         textFieldMail.textProperty().bindBidirectional(fournisseurVue.MailProperty());
         textFieldTelephone.textProperty().bindBidirectional(fournisseurVue.TelephoneProperty());
-       
-
-		// Data binding
-
-	  			
-
         
     	
    
