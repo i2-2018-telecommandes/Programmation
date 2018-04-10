@@ -70,7 +70,7 @@ public class ControllerFournisseurForm {
 
 
 		// Data binding
-		textFieldId.textProperty().bind(new StringBindingId(fournisseurVue.idFournisseurProperty()));
+	//	textFieldId.textProperty().bind(new StringBindingId(fournisseurVue.idFournisseurProperty()));
         textFieldNom.textProperty().bindBidirectional(fournisseurVue.nomProperty());
         textFieldMail.textProperty().bindBidirectional(fournisseurVue.MailProperty());
         textFieldTelephone.textProperty().bindBidirectional(fournisseurVue.TelephoneProperty());
@@ -90,13 +90,13 @@ public class ControllerFournisseurForm {
 	
 	@FXML
 	private void doAnnuler() {
-		managerGui.showView( EnumView.FournisseurListe );;
+		managerGui.showView( EnumView.FournisseurListe2 );;
 	}
 	
 	@FXML
 	private void doValider() throws ExceptionValidation  {
 		modelFournisseur.validerMiseAJour();
-		managerGui.showView( EnumView.FournisseurListe );;
+		managerGui.showView( EnumView.FournisseurListe2 );;
 	}
 
     

@@ -143,13 +143,13 @@ public class ControllerFournisseurListe {
 	@FXML
 	private void doAjouter() {
 		modelFournisseur.preparerAjouter();
-		managerGui.showView( EnumView.FournisseurForm );
+		managerGui.showView( EnumView.FournisseurForm2 );
 	}
 
 	@FXML
 	private void doModifier() {
 		modelFournisseur.preparerModifier( tableView.getSelectionModel().getSelectedItem() );
-		managerGui.showView( EnumView.FournisseurForm );
+		managerGui.showView( EnumView.FournisseurForm2 );
 	}
 
 	@FXML

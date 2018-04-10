@@ -81,19 +81,19 @@ public class ControllerPrincipal  {
 	
 	@FXML
 	public void doAfficherListeComptes() {
-		managerGui.showView( EnumView.CompteListe );;
+		managerGui.showView( EnumView.CompteListe2 );;
 	}
 	@FXML
 	public void doAfficherListeMarque() {
-		managerGui.showView( EnumView.MarqueListe );;
+		managerGui.showView( EnumView.MarqueListe2 );;
 	}
 	@FXML
 	public void doAfficherListeTeleviseur() {
-		managerGui.showView( EnumView.TeleviseurListe );;
+		managerGui.showView( EnumView.TeleviseurListe2 );;
 	}
 	@FXML
 	public void doAfficherListeFournisseur() {
-		managerGui.showView( EnumView.FournisseurListe );;
+		managerGui.showView( EnumView.FournisseurListe2 );;
 	}
 	// Méthodes auxiliaires
 	

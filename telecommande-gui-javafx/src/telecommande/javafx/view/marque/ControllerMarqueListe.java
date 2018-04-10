@@ -113,13 +113,13 @@ public class ControllerMarqueListe {
 	@FXML
 	private void doAjouter() {
 		modelMarque.preparerAjouter();
-		managerGui.showView( EnumView.MarqueForm );
+		managerGui.showView( EnumView.MarqueForm2 );
 	}
 
 	@FXML
 	private void doModifier() {
 		modelMarque.preparerModifier( listView.getSelectionModel().getSelectedItem() );
-		managerGui.showView( EnumView.MarqueForm );
+		managerGui.showView( EnumView.MarqueForm2 );
 	}
 
 	@FXML

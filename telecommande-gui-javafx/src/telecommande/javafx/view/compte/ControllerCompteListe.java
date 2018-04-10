@@ -21,6 +21,9 @@ public class ControllerCompteListe  {
 
 	@FXML
 	private ListView<Compte>	listView;
+	
+	@FXML
+	private Button				buttonAjouter;
 	@FXML
 	private Button				buttonModifier;
 	@FXML
@@ -103,13 +106,13 @@ public class ControllerCompteListe  {
 	@FXML
 	private void doAjouter() {
 		modelCompte.preparerAjouter();
-		managerGui.showView( EnumView.CompteForm );
+		managerGui.showView( EnumView.CompteForm2 );
 	}
 
 	@FXML
 	private void doModifier() {
 		modelCompte.preparerModifier( listView.getSelectionModel().getSelectedItem() );
-		managerGui.showView( EnumView.CompteForm );
+		managerGui.showView( EnumView.CompteForm2 );
 	}
 
 	@FXML

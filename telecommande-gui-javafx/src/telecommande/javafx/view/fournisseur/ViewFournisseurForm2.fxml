@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="364.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.fournisseur.ControllerFournisseurForm">
+   <children>
+      <AnchorPane prefHeight="365.0" prefWidth="486.0" style="-fx-background-color: #FFDEAD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_CENTER" layoutX="87.0" layoutY="82.0" prefHeight="182.0" prefWidth="261.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="82.0">
+               <children>
+                  <AnchorPane prefHeight="205.0" prefWidth="296.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="38.0" prefHeight="17.0" prefWidth="41.0" text="NOM" />
+                        <TextField fx:id="textFieldNom" layoutX="98.0" layoutY="34.0" />
+                        <TextField fx:id="textFieldMail" layoutX="98.0" layoutY="79.0" />
+                        <Label layoutX="20.0" layoutY="83.0" prefHeight="17.0" prefWidth="41.0" text="MAIL" />
+                        <TextField fx:id="textFieldTelephone" layoutX="98.0" layoutY="124.0" />
+                        <Label layoutX="21.0" layoutY="128.0" prefHeight="17.0" prefWidth="71.0" text="TELEPHONE" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox layoutY="-6.0" prefHeight="35.0" prefWidth="423.0" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="-6.0" />
+            <HBox alignment="TOP_CENTER" layoutX="160.0" layoutY="47.0" prefHeight="49.0" prefWidth="200.0" AnchorPane.bottomAnchor="268.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="47.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="141.0" text="FOURNISSEUR" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutY="244.0" prefHeight="120.0" prefWidth="519.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="244.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#doValider" prefHeight="39.0" prefWidth="101.0" text="VALIDER">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/ajouter.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="280.0" layoutY="26.0" mnemonicParsing="false" onAction="#doAnnuler" prefHeight="39.0" prefWidth="111.0" text="ANNULER">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/supprimer.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

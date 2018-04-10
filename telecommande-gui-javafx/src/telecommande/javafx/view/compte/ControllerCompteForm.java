@@ -69,7 +69,7 @@ public class ControllerCompteForm {
 	public void init() {
 
 		// Data binding
-		textFieldId.textProperty().bind(new StringBindingId(compteVue.idProperty()));
+		//textFieldId.textProperty().bind(new StringBindingId(compteVue.idProperty()));
 		textFieldPseudo.textProperty().bindBidirectional( compteVue.pseudoProperty() );
 		textFieldMotDePasse.textProperty().bindBidirectional( compteVue.motDePasseProperty() );
 		textFieldEmail.textProperty().bindBidirectional( compteVue.emailProperty() );
@@ -114,13 +114,13 @@ public class ControllerCompteForm {
 	
 	@FXML
 	private void doAnnuler() {
-		managerGui.showView( EnumView.CompteListe );;
+		managerGui.showView( EnumView.CompteListe2 );;
 	}
 	
 	@FXML
 	private void doValider() throws ExceptionValidation  {
 		modelCompte.validerMiseAJour();
-		managerGui.showView( EnumView.CompteListe );;
+		managerGui.showView( EnumView.CompteListe2 );;
 	}
 
     

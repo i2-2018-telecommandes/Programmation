@@ -72,7 +72,7 @@ public class ControllerTeleviseurForm {
 
 
 		// Data binding
-		textFieldId.textProperty().bind(new StringBindingId(televiseurVue.idTeleviseurProperty()));
+		//textFieldId.textProperty().bind(new StringBindingId(televiseurVue.idTeleviseurProperty()));
         textFieldNom.textProperty().bindBidirectional(televiseurVue.nomProperty());
         textFieldReference.textProperty().bindBidirectional(televiseurVue.referenceProperty());
         comboMarque.valueProperty().bindBidirectional( televiseurVue.MarqueProperty());
@@ -100,13 +100,13 @@ public class ControllerTeleviseurForm {
 	
 	@FXML
 	private void doAnnuler() {
-		managerGui.showView( EnumView.TeleviseurListe );;
+		managerGui.showView( EnumView.TeleviseurListe2 );;
 	}
 	
 	@FXML
 	private void doValider() throws ExceptionValidation  {
 		modelTeleviseur.validerMiseAJour();
-		managerGui.showView( EnumView.TeleviseurListe );;
+		managerGui.showView( EnumView.TeleviseurListe2 );;
 	}
 
     
