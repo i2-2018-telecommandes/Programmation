@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane focusTraversable="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.systeme.ControllerPrincipal">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Système">
+            <items>
+                  <MenuItem fx:id="menuItemSeDeconnecter" mnemonicParsing="false" onAction="#doSeDeconnecter" text="Se déconnecter" />
+              <MenuItem id="menuItemQuitter" mnemonicParsing="false" onAction="#doQuitter" text="Quitter" />
+            </items>
+          </Menu>
+            <Menu fx:id="menuVente" mnemonicParsing="false" text="Gestion de ventes">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Vente" />
+              </items>
+            </Menu>
+            <Menu fx:id="menuStock" mnemonicParsing="false" text="Gestion de stock">
+              <items>
+                <MenuItem fx:id="menuItemMarque" mnemonicParsing="false" onAction="#doAfficherListeMarque" text="Marque" />
+                  <MenuItem fx:id="menuItemTeleviseur" mnemonicParsing="false" onAction="#doAfficherListeTeleviseur" text="Televiseur" />
+                  <MenuItem fx:id="menuItemFournisseur" mnemonicParsing="false" onAction="#doAfficherListeFournisseur" text="Fournisseur" />
+              </items>
+            </Menu>
+          <Menu fx:id="menuDonnees" mnemonicParsing="false" text="Gestion de données annexes">
+               <items>
+                  <MenuItem fx:id="menuItemComptes" mnemonicParsing="false" onAction="#doAfficherListeComptes" text="Comptes" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aide">
+            <items>
+              <MenuItem mnemonicParsing="false" text="A Propos" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
