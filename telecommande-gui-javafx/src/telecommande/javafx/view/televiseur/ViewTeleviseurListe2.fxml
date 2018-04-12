@@ -22,7 +22,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#doModifier" prefHeight="37.0" prefWidth="110.0" text="MODIFIER">
+            <Button fx:id="buttonModifier" mnemonicParsing="false" onAction="#doModifier" prefHeight="37.0" prefWidth="110.0" text="MODIFIER">
                <graphic>
                   <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -31,7 +31,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="345.0" layoutY="45.0" mnemonicParsing="false" onAction="#doSupprimer" prefHeight="37.0" prefWidth="128.0" text="SUPPRIMER">
+            <Button fx:id="buttonSupprimer" layoutX="345.0" layoutY="45.0" mnemonicParsing="false" onAction="#doSupprimer" prefHeight="37.0" prefWidth="128.0" text="SUPPRIMER">
                <graphic>
                   <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
