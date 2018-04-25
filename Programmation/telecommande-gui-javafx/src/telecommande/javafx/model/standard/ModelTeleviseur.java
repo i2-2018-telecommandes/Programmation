@@ -110,6 +110,8 @@ public class ModelTeleviseur implements IModelTeleviseur {
         modeVue = MODIFIER;
 		televiseurCourant = televiseur;
 		mapper.update( televiseur, televiseurVue );	
+		System.out.println(televiseur.getMarque().getNom());
+		System.out.println(televiseurVue.getMarque().getNom());
 	}
 	
 	

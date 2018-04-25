@@ -1,10 +1,16 @@
 package telecommande.javafx.view.systeme;
 
 import javafx.application.Platform;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import telecommande.commun.service.IServiceCompte;
 import telecommande.javafx.data.Compte;
+import telecommande.javafx.data.Fournisseur;
+import telecommande.javafx.data.mapper.IMapper;
 import telecommande.javafx.model.IModelConnexion;
 import telecommande.javafx.model.IModelInfo;
 import telecommande.javafx.view.EnumView;
@@ -13,6 +19,7 @@ import telecommande.javafx.view.IManagerGui;
 
 public class ControllerConnexion {
 	
+
 
 	// Composants de la vue
 	
@@ -29,6 +36,9 @@ public class ControllerConnexion {
 	private IModelInfo		modelInfo;
 	
 	
+
+	
+	
 	// Injecteurs
 
 	public void setManagerGui(IManagerGui managerGui) {
@@ -43,7 +53,7 @@ public class ControllerConnexion {
 		this.modelInfo = modelInfo;
 	}
 	
-	
+
 	// Initialisation du Controller
 	
 	public void init() {
@@ -61,9 +71,9 @@ public class ControllerConnexion {
 	public void doConnexion()  {
 		managerGui.execTask( () -> {
 			modelConnexion.ouvrirSessionUtilisateur();
-			String pseudo=modelConnexion.getCompteVue().getPseudo();
+			String nom=modelConnexion.getCompteVue().getPseudo();
 			 Platform.runLater( () -> {
-         			modelInfo.titreProperty().set( "Bienvenue "+pseudo);
+         			modelInfo.titreProperty().set( "Bienvenue "+nom);
         			modelInfo.messageProperty().set( "Connexion réussie" );
         			managerGui.showView(EnumView.Info);
              }) ;

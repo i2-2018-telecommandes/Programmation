@@ -1,6 +1,5 @@
 package telecommande.javafx.view.televiseur;
 
-
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -25,95 +24,73 @@ import telecommande.javafx.view.EnumView;
 import telecommande.javafx.view.IManagerGui;
 import telecommande.javafx.view.util.StringBindingId;
 
-
 public class ControllerTeleviseurForm {
 
-	
 	// Composants de la vue
-	
-	@FXML
-	private TextField			textFieldId;
-	@FXML
-	private TextField			textFieldNom;
-	@FXML
-	private TextField			textFieldReference;
-	@FXML
-	private ComboBox<Marque>			comboMarque;
 
-	
+	@FXML
+	private TextField textFieldId;
+	@FXML
+	private TextField textFieldNom;
+	@FXML
+	private TextField textFieldReference;
+	@FXML
+	private ComboBox<Marque> comboMarque;
+
 	// Autres champs
-	
-	private IManagerGui			    managerGui;
-	private IModelTeleviseur		modelTeleviseur;
-	private IModelMarque		    modelMarque;
-	private Televiseur 				televiseurVue;
-	
-	
 
+	private IManagerGui managerGui;
+	private IModelTeleviseur modelTeleviseur;
+	private IModelMarque modelMarque;
+	private Televiseur televiseurVue;
 
-	
 	// Injecteurs
 
 	public void setManagerGui(IManagerGui managerGui) {
 		this.managerGui = managerGui;
 	}
-	
+
 	public void setModelTeleviseur(IModelTeleviseur modelTeleviseur) {
 		this.modelTeleviseur = modelTeleviseur;
 		televiseurVue = modelTeleviseur.getTeleviseurVue();
 	}
-   
+
 	public void setModelMarque(IModelMarque modelMarque) {
 		this.modelMarque = modelMarque;
 	}
 	// Initialisation du Controller
-	
+
 	public void init() {
 
-
 		// Data binding
-		textFieldId.textProperty().bind(new StringBindingId(televiseurVue.idTeleviseurProperty()));
-        textFieldNom.textProperty().bindBidirectional(televiseurVue.nomProperty());
-        textFieldReference.textProperty().bindBidirectional(televiseurVue.referenceProperty());
-        comboMarque.valueProperty().bindBidirectional( televiseurVue.MarqueProperty());
-		comboMarque.setItems( modelMarque.getMarques() );
-        
+		// textFieldId.textProperty().bind(new
+		// StringBindingId(televiseurVue.idTeleviseurProperty()));
+		textFieldNom.textProperty().bindBidirectional(televiseurVue.nomProperty());
+		textFieldReference.textProperty().bindBidirectional(televiseurVue.referenceProperty());
+		comboMarque.valueProperty().bindBidirectional(televiseurVue.MarqueProperty());
+		comboMarque.setItems(modelMarque.getMarques());
+
 		// Configuration de l'objet ListView
 
 		// Data binding
 
-	  			
-
-        
-    	
-   
-    	
-		
 		// Affichage
-        
-        
+
 	}
-	
-	
-	
+
 	// Actions
-	
+
 	@FXML
 	private void doAnnuler() {
-		managerGui.showView( EnumView.TeleviseurListe );;
+		managerGui.showView(EnumView.TeleviseurListe2);
+		;
 	}
-	
+
 	@FXML
-	private void doValider() throws ExceptionValidation  {
+	private void doValider() throws ExceptionValidation {
 		modelTeleviseur.validerMiseAJour();
-		managerGui.showView( EnumView.TeleviseurListe );;
+		managerGui.showView(EnumView.TeleviseurListe2);
+		;
 	}
 
-    
-    
 }
-	
-	
-
-
-

@@ -115,13 +115,13 @@ public class ControllerTeleviseurListe {
 	@FXML
 	private void doAjouter() {
 		modelTeleviseur.preparerAjouter();
-		managerGui.showView(EnumView.TeleviseurForm);
+		managerGui.showView(EnumView.TeleviseurForm2);
 	}
 
 	@FXML
 	private void doModifier() {
 		modelTeleviseur.preparerModifier(tableView.getSelectionModel().getSelectedItem());
-		managerGui.showView(EnumView.TeleviseurForm);
+		managerGui.showView(EnumView.TeleviseurForm2);
 	}
 
 	@FXML

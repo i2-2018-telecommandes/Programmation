@@ -54,7 +54,7 @@ public class DtoTeleviseur {
 		return marque;
 	}
 
-	public void setDtoMarque(DtoMarque marque) {
+	public void setMarque(DtoMarque marque) {
 		this.marque = marque;
 	}
 }

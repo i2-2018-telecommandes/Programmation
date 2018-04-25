@@ -1,0 +1,5 @@
+package telecommande.emb.data.mapper;
+
+public @interface Map {
+
+}

@@ -1,6 +1,5 @@
 package telecommande.javafx.view.fournisseur;
 
-
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -25,92 +24,64 @@ import telecommande.javafx.view.EnumView;
 import telecommande.javafx.view.IManagerGui;
 import telecommande.javafx.view.util.StringBindingId;
 
-
 public class ControllerFournisseurForm {
 
-	
 	// Composants de la vue
-	
-	@FXML
-	private TextField			textFieldId;
-	@FXML
-	private TextField			textFieldNom;
-	@FXML
-	private TextField			textFieldMail;
-	
-	@FXML
-	private TextField			textFieldTelephone;
-	
 
-	
+	@FXML
+	private TextField textFieldId;
+	@FXML
+	private TextField textFieldNom;
+	@FXML
+	private TextField textFieldMail;
+	@FXML
+	private TextField textFieldTelephone;
+
 	// Autres champs
-	
-	private IManagerGui			    managerGui;
-	private IModelFournisseur		modelFournisseur;
-	private Fournisseur 				fournisseurVue;
 
-	
+	private IManagerGui managerGui;
+	private IModelFournisseur modelFournisseur;
+	private Fournisseur fournisseurVue;
 
-
-	
 	// Injecteurs
 
 	public void setManagerGui(IManagerGui managerGui) {
 		this.managerGui = managerGui;
 	}
-	
+
 	public void setModelFournisseur(IModelFournisseur modelFournisseur) {
 		this.modelFournisseur = modelFournisseur;
 		fournisseurVue = modelFournisseur.getFournisseurVue();
 	}
 
-
 	// Initialisation du Controller
-	
+
 	public void init() {
 
-
 		// Data binding
-		textFieldId.textProperty().bind(new StringBindingId(fournisseurVue.idFournisseurProperty()));
-        textFieldNom.textProperty().bindBidirectional(fournisseurVue.nomProperty());
-        textFieldMail.textProperty().bindBidirectional(fournisseurVue.MailProperty());
-        textFieldTelephone.textProperty().bindBidirectional(fournisseurVue.TelephoneProperty());
-       
+		// textFieldId.textProperty().bind(new
+		// StringBindingId(fournisseurVue.idFournisseurProperty()));
+		textFieldNom.textProperty().bindBidirectional(fournisseurVue.nomProperty());
+		textFieldMail.textProperty().bindBidirectional(fournisseurVue.MailProperty());
+		textFieldTelephone.textProperty().bindBidirectional(fournisseurVue.TelephoneProperty());
 
-		// Data binding
-
-	  			
-
-        
-    	
-   
-    	
-		
 		// Affichage
-        
-        
+
 	}
-	
-	
-	
+
 	// Actions
-	
+
 	@FXML
 	private void doAnnuler() {
-		managerGui.showView( EnumView.FournisseurListe );;
+		managerGui.showView(EnumView.FournisseurListe2);
+		;
 	}
-	
+
 	@FXML
-	private void doValider() throws ExceptionValidation  {
+	private void doValider() throws ExceptionValidation {
 		modelFournisseur.validerMiseAJour();
-		managerGui.showView( EnumView.FournisseurListe );;
+		managerGui.showView(EnumView.FournisseurListe2);
+		;
 	}
 
-    
-    
 }
-	
-	
-
-
-

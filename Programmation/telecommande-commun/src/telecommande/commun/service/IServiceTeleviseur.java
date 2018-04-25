@@ -2,7 +2,6 @@ package telecommande.commun.service;
 
 import java.util.List;
 
-import telecommande.commun.dto.DtoMarque;
 import telecommande.commun.dto.DtoTeleviseur;
 import telecommande.commun.util.ExceptionValidation;
 

@@ -54,4 +54,29 @@ public class Marque {
 		// TODO Auto-generated method stub
 		return this.nom.get();
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idMarque == null) ? 0 : idMarque.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Marque other = (Marque) obj;
+		if (idMarque == null) {
+			if (other.idMarque != null)
+				return false;
+		} else if (!idMarque.equals(other.idMarque))
+			return false;
+		return true;
+	}
 }

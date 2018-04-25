@@ -1,6 +1,7 @@
 package telecommande.javafx.data.mapper;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
@@ -42,7 +43,7 @@ public interface IMapper {
 		Televiseur map( DtoTeleviseur source );
 				
 		DtoTeleviseur map( Televiseur source );
-				
+		@Mapping(target="marque", expression="java(source.getMarque() )")
 		Televiseur update( Televiseur source, @MappingTarget Televiseur target );
 		
 	// Fournisseur

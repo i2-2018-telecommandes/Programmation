@@ -2,7 +2,6 @@ package telecommande.javafx.model;
 
 import javafx.collections.ObservableList;
 import telecommande.commun.util.ExceptionValidation;
-import telecommande.javafx.data.Marque;
 import telecommande.javafx.data.Televiseur;
 
 
@@ -11,7 +10,6 @@ public interface IModelTeleviseur {
 	ObservableList<Televiseur> getTeleviseurs();
 
 	Televiseur getTeleviseurVue();
-	
 	
 	void actualiserListe();
 

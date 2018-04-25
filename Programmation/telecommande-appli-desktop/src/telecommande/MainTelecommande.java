@@ -96,7 +96,7 @@ public class MainTelecommande {
 			
 			
 			// Démarre l'application
-			managerGui.launch( "Gestion des contacts" );
+			managerGui.launch( "Gestion de stock" );
 			
 		} catch(Exception e) {
 			e.printStackTrace();

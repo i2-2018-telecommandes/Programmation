@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="514.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telecommande.javafx.view.televiseur.ControllerTeleviseurForm">
+   <children>
+      <HBox layoutY="-1.0" prefHeight="43.0" prefWidth="600.0" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+      <Text layoutX="224.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="61.541015625" />
+      <HBox alignment="CENTER" layoutX="97.0" layoutY="30.0" prefHeight="27.0" prefWidth="375.0" AnchorPane.bottomAnchor="327.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="30.0" />
+      <HBox alignment="CENTER" layoutX="31.0" layoutY="54.0" prefHeight="238.0" prefWidth="484.0" spacing="10.0" AnchorPane.bottomAnchor="92.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="54.0">
+         <children>
+            <AnchorPane prefHeight="68.0" prefWidth="484.0">
+               <children>
+                  <TextField fx:id="textFieldNom" layoutX="168.0" layoutY="46.0" />
+                  <Label layoutX="86.0" layoutY="50.0" text="NOM" />
+                  <Label layoutX="86.0" layoutY="111.0" text="REFERENCE" />
+                  <TextField fx:id="textFieldReference" layoutX="168.0" layoutY="107.0" />
+                  <Label layoutX="86.0" layoutY="171.0" text="MARQUE" />
+                  <ComboBox fx:id="comboMarque" layoutX="167.0" layoutY="167.0" prefWidth="150.0" />
+                  <Label layoutX="183.0" layoutY="4.0" prefHeight="27.0" prefWidth="130.0" text="  FORMULAIRE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="316.0" prefHeight="68.0" prefWidth="514.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="316.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#doValider" prefHeight="36.0" prefWidth="97.0" text="VALIDER">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/ajouter.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="219.0" layoutY="26.0" mnemonicParsing="false" onAction="#doAnnuler" prefHeight="36.0" prefWidth="97.0" text="ANNULER">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/supprimer.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -165,6 +165,33 @@ public class DaoCompte implements IDaoCompte {
 		}
 	}
 
+@Override
+public Compte retrouvernom (char pseudo)  {
+
+		Connection			cn		= null;
+		PreparedStatement	stmt	= null;
+		ResultSet 			rs 		= null;
+		String				sql;
+
+		try {
+			cn = dataSource.getConnection();
+
+			sql = "SELECT * FROM Utilisateur WHERE pseudo = ?";
+            stmt = cn.prepareStatement( sql );
+            stmt.setInt( 1, pseudo );
+            rs = stmt.executeQuery();
+
+            if ( rs.next() ) {
+                return construireCompte( rs );
+            } else {
+            	return null;
+            }
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			UtilJdbc.close( rs, stmt, cn );
+		}
+	}
 	
 	@Override
 	public List<Compte> listerTout()   {
@@ -261,6 +288,8 @@ public class DaoCompte implements IDaoCompte {
 		compte.setId( rs.getInt( "IdUtilisateur" ) );
 		compte.setPseudo( rs.getString( "login" ) );
 		compte.setMotDePasse( rs.getString( "MotPass" ) );
+		compte.setNom(rs.getString( "nom" )) ;
+		compte.setPrenom((rs.getString( "prenom" )));
 		compte.setEmail( rs.getString( "mail" ) );
 		compte.setRoles( daoRole.listerPourCompte( compte ) );
 		return compte;

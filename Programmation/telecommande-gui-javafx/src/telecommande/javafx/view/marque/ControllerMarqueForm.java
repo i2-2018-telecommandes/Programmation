@@ -59,7 +59,7 @@ public class ControllerMarqueForm {
 	public void init() {
 
 		// Data binding
-		textFieldId.textProperty().bind(new StringBindingId(marqueVue.idMarqueProperty()));
+		//textFieldId.textProperty().bind(new StringBindingId(marqueVue.idMarqueProperty()));
         textFieldNom.textProperty().bindBidirectional(marqueVue.nomProperty());
 		
 		// Configuration de l'objet ListView
@@ -84,13 +84,13 @@ public class ControllerMarqueForm {
 	
 	@FXML
 	private void doAnnuler() {
-		managerGui.showView( EnumView.MarqueListe );;
+		managerGui.showView( EnumView.MarqueListe2 );;
 	}
 	
 	@FXML
 	private void doValider() throws ExceptionValidation  {
 		modelMarque.validerMiseAJour();
-		managerGui.showView( EnumView.MarqueListe );;
+		managerGui.showView( EnumView.MarqueListe2 );;
 	}
 
     

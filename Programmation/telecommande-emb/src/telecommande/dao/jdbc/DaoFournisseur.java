@@ -51,7 +51,7 @@ public class DaoFournisseur implements IDaoFournisseur {
 			stmt.setString(	2, fournisseur.getMail() );
 			stmt.setString(	3, fournisseur.getTelephone() );
 			stmt.executeUpdate();
-			
+
 			// Récupère l'identifiant généré par le SGBD
 			rs = stmt.getGeneratedKeys();
 			rs.next();
@@ -84,10 +84,10 @@ public class DaoFournisseur implements IDaoFournisseur {
 			sql = "UPDATE fournisseur SET nom = ?,email= ?,telephone= ?  WHERE IdFournisseur =  ?";
 			stmt = cn.prepareStatement( sql );
 			
-			stmt.setString(	1, fournisseur.getNom() );
+			stmt.setString(1, fournisseur.getNom() );
 			stmt.setString(2, fournisseur.getMail() );
-			stmt.setString(	3, fournisseur.getTelephone() );
-			stmt.setInt(4, fournisseur.getIdFournisseur());
+			stmt.setString(3, fournisseur.getTelephone() );
+			stmt.setInt   (4, fournisseur.getIdFournisseur());
 			stmt.executeUpdate();
 			
 		} catch (SQLException e) {

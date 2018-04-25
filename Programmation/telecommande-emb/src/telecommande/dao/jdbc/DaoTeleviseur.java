@@ -85,12 +85,13 @@ public class DaoTeleviseur implements IDaoTeleviseur {
 			cn = dataSource.getConnection();
 
 			// Modifie le televiseur
-			sql = "UPDATE televiseur SET nom = ?, idmarque= ?, reference= ? WHERE IdTeleviseur =  ?";
+			sql = "UPDATE televiseur SET nom = ?, reference=?, idmarque=? WHERE IdTeleviseur =  ?";
 			stmt = cn.prepareStatement( sql );
+			
 			stmt.setString(	1, televiseur.getNom() );
-			stmt.setInt(2, televiseur.getMarque().getIdMarque());
-			stmt.setString(3, televiseur.getReference());
-			stmt.setInt(4, televiseur.getIdTeleviseur() );
+			stmt.setString(	2, televiseur.getReference() );
+			stmt.setInt   (	3, televiseur.getMarque().getIdMarque() );
+			stmt.setInt   ( 4, televiseur.getIdTeleviseur() );
 			
 			stmt.executeUpdate();
 			
