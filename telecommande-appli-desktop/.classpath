@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
@@ -7,3 +8,14 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/telecommande-emb"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/telecommande-gui-javafx"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/telecommande-commun"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/telecommande-emb"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
+>>>>>>> 8db2a1bbb19125a2c2e94e2e523eef8498e32271
