@@ -9,7 +9,7 @@ public class DtoTeleviseur {
 	
 	private String		reference;
 	
-	private DtoMarque	   marque;
+	private DtoMarque	marque;
 	
 	
 	public 	DtoTeleviseur() {
@@ -54,7 +54,7 @@ public class DtoTeleviseur {
 		return marque;
 	}
 
-	public void setDtoMarque(DtoMarque marque) {
+	public void setMarque(DtoMarque marque) {
 		this.marque = marque;
 	}
 }

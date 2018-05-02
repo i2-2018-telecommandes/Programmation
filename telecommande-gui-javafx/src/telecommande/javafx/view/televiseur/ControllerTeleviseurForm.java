@@ -38,7 +38,7 @@ public class ControllerTeleviseurForm {
 	@FXML
 	private TextField			textFieldReference;
 	@FXML
-	private ComboBox<Marque>			comboMarque;
+	private ComboBox<Marque>	comboMarque;
 
 	
 	// Autres champs
@@ -77,20 +77,6 @@ public class ControllerTeleviseurForm {
         textFieldReference.textProperty().bindBidirectional(televiseurVue.referenceProperty());
         comboMarque.valueProperty().bindBidirectional( televiseurVue.MarqueProperty());
 		comboMarque.setItems( modelMarque.getMarques() );
-        
-		// Configuration de l'objet ListView
-
-		// Data binding
-
-	  			
-
-        
-    	
-   
-    	
-		
-		// Affichage
-        
         
 	}
 	

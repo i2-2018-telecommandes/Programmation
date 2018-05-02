@@ -10,10 +10,10 @@ import javafx.beans.property.StringProperty;
 
 public class Fournisseur {
 
-	private final IntegerProperty	idFournisseur	 = new SimpleIntegerProperty();
-	private final StringProperty	nom			 = new SimpleStringProperty();
-	private final StringProperty	Mail	= new SimpleStringProperty();
-	private final StringProperty	Telephone	 = new SimpleStringProperty();
+	private final IntegerProperty	idFournisseur = new SimpleIntegerProperty();
+	private final StringProperty	nom			  = new SimpleStringProperty();
+	private final StringProperty	Mail	      = new SimpleStringProperty();
+	private final StringProperty	Telephone	  = new SimpleStringProperty();
 	
 	public Fournisseur() {
 	}

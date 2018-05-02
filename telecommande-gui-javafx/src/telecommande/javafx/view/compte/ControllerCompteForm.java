@@ -10,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxListCell;
@@ -40,9 +41,13 @@ public class ControllerCompteForm {
 	@FXML
 	private TextField			textFieldEmail;
 	@FXML
-	private ListView<ItemRole>	listViewRoles;
+	private ListView<ItemRole>	listViewRole;
 
-	
+	@FXML
+	private Button				buttonValider;
+	@FXML
+	private Button				buttonAnnuler;
+
 	// Autres champs
 	
 	private IManagerGui			managerGui;
@@ -85,8 +90,8 @@ public class ControllerCompteForm {
     		itemRoleAjouter( role, false);
     	}
 		actualiserListeItemRoles();    			
-
-        listViewRoles.setItems( itemRoles );
+       System.out.println(itemRoles.size());
+        listViewRole.setItems( itemRoles );
     	
     	// De compteVue vers la liste
     	compteVue.getRoles().addListener(
@@ -102,7 +107,7 @@ public class ControllerCompteForm {
     	
 		
 		// Affichage
-        listViewRoles.setCellFactory( CheckBoxListCell.forListView(
+        listViewRole.setCellFactory( CheckBoxListCell.forListView(
         		(ItemRole item) -> item.choisiProperty()
    		) );
         

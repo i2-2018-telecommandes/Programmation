@@ -15,7 +15,8 @@ public class Televiseur {
 	private final StringProperty	reference	= new SimpleStringProperty();
 	private final ObjectProperty<Marque>	marque	= new SimpleObjectProperty<>();
 	private final IntegerProperty	idMarque	 = new SimpleIntegerProperty();
-		public final IntegerProperty idTeleviseurProperty() {
+		
+	public final IntegerProperty idTeleviseurProperty() {
 		return this.idTeleviseur;
 	}
 	

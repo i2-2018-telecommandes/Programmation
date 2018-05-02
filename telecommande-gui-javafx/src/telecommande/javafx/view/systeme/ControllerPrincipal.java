@@ -95,6 +95,10 @@ public class ControllerPrincipal  {
 	public void doAfficherListeFournisseur() {
 		managerGui.showView( EnumView.FournisseurListe2 );;
 	}
+	@FXML
+	public void doAfficherModeleTelecommande() {
+		managerGui.showView( EnumView.ModeleTelecommandeListe );;
+	}
 	// Méthodes auxiliaires
 	
 	private void configurerMenu() {

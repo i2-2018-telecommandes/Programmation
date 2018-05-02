@@ -22,7 +22,7 @@ public class ServiceFournisseur implements IServiceFournisseur {
 	private IManagerSecurite	managerSecurite;
 	private	IManagerTransaction	managerTransaction;
 	private IMapper				mapper;
-	private IDaoFournisseur			daoFournisseur;
+	private IDaoFournisseur		daoFournisseur;
 	
 	
 	// Injecteurs

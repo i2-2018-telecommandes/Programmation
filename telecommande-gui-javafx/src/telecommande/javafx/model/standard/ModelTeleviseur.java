@@ -43,9 +43,9 @@ public class ModelTeleviseur implements IModelTeleviseur {
 	
 	
 	// Autres champs
-	private IMapper			mapper;
+	private IMapper			    mapper;
 	private IServiceTeleviseur	serviceTeleviseur;
-	private IServiceMarque	serviceMarque;
+	private IServiceMarque	    serviceMarque;
 	
 	
 	// Getters

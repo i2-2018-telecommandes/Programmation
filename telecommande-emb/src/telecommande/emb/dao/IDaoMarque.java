@@ -2,6 +2,7 @@ package telecommande.emb.dao;
 
 import java.util.List;
 
+import telecommande.emb.data.Fournisseur;
 import telecommande.emb.data.Marque;
 
 
@@ -13,7 +14,7 @@ public interface IDaoMarque {
 
 	void 		supprimer( int idMarque );
 
-	Marque 		retrouver( int idMarque );
+	Marque      retrouver( int idMarque );
 
 	List<Marque> listerTout();
 

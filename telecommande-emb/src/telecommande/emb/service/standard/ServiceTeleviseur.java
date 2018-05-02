@@ -22,7 +22,7 @@ public class ServiceTeleviseur implements IServiceTeleviseur {
 	private IManagerSecurite	managerSecurite;
 	private	IManagerTransaction	managerTransaction;
 	private IMapper				mapper;
-	private IDaoTeleviseur			daoTeleviseur;
+	private IDaoTeleviseur		daoTeleviseur;
 	
 	
 	// Injecteurs

@@ -9,10 +9,12 @@ import javafx.collections.ObservableList;
 import telecommande.commun.dto.DtoCompte;
 import telecommande.commun.dto.DtoFournisseur;
 import telecommande.commun.dto.DtoMarque;
+import telecommande.commun.dto.DtoModeleTelecommande;
 import telecommande.commun.dto.DtoTeleviseur;
 import telecommande.javafx.data.Compte;
 import telecommande.javafx.data.Fournisseur;
 import telecommande.javafx.data.Marque;
+import telecommande.javafx.data.ModeleTelecommande;
 import telecommande.javafx.data.Televiseur;
    
 import org.mapstruct.Mapper;
@@ -52,6 +54,16 @@ public interface IMapper {
 				DtoFournisseur map( Fournisseur source );
 						
 				Fournisseur update( Fournisseur source, @MappingTarget Fournisseur target );
+	
+				
+				
+	//ModeleTecommande
+				
+		    	ModeleTelecommande map( DtoModeleTelecommande source );
+						
+				DtoModeleTelecommande map(ModeleTelecommande source );
+						
+				ModeleTelecommande update(ModeleTelecommande source, @MappingTarget ModeleTelecommande target);
 				
 	
     // Classe auxiliaire

@@ -75,12 +75,6 @@ public class ControllerFournisseurForm {
         textFieldMail.textProperty().bindBidirectional(fournisseurVue.MailProperty());
         textFieldTelephone.textProperty().bindBidirectional(fournisseurVue.TelephoneProperty());
         
-    	
-   
-    	
-		
-		// Affichage
-        
         
 	}
 	

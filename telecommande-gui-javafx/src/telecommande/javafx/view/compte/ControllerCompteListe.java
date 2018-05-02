@@ -5,10 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import telecommande.commun.util.ExceptionValidation;
 import telecommande.javafx.data.Compte;
+import telecommande.javafx.data.ModeleTelecommande;
+import telecommande.javafx.data.Televiseur;
 import telecommande.javafx.model.IModelCompte;
 import telecommande.javafx.view.EnumView;
 import telecommande.javafx.view.IManagerGui;
@@ -18,7 +22,15 @@ public class ControllerCompteListe  {
 	
 	
 	// Composants de la vue
-
+	@FXML
+	private TableView<Compte> tableView ;
+	@FXML
+	private TableColumn<Compte,String> columnnom;
+	@FXML
+	private TableColumn<Compte,String> columnlogin;
+	@FXML
+	private TableColumn<Compte,String> columnmail;
+	
 	@FXML
 	private ListView<Compte>	listView;
 	
@@ -28,8 +40,7 @@ public class ControllerCompteListe  {
 	private Button				buttonModifier;
 	@FXML
 	private Button				buttonSupprimer;
-	@FXML
-	private Button				buttonMemos;
+	
 
 	
 	// Autres champs
@@ -55,41 +66,35 @@ public class ControllerCompteListe  {
 		
 		// Configuration de l'objet ListView
 		
-		// Data binding
-		listView.setItems( modelCompte.getComptes() );
-
+tableView.setItems( modelCompte.getComptes() );
+		
+		columnnom.setCellValueFactory( cellData -> cellData.getValue().nomProperty());
+		columnlogin.setCellValueFactory( cellData -> cellData.getValue().pseudoProperty());
+		columnmail.setCellValueFactory( cellData -> cellData.getValue().emailProperty());
 		// Affichage
-		listView.setCellFactory( (list) -> {
-		    return new ListCell<Compte>() {
-		        @Override
-		        protected void updateItem(Compte item, boolean empty) {
-		            super.updateItem(item, empty);
-		            if (item == null) {
-		                setText(null);
-		            } else {
-		                setText(item.pseudoProperty().get() );
-		            }
-		        }
-		    };
-		});		
+		columnnom.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
+		columnlogin.setCellValueFactory(cellData -> cellData.getValue().pseudoProperty());
+		columnmail.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+		
+		
 
 		// Comportement si modificaiton de la séleciton
-		listView.getSelectionModel().getSelectedItems().addListener( 
+		tableView.getSelectionModel().getSelectedItems().addListener( 
 				(ListChangeListener<Compte>) (c) -> {
 					 configurerBoutons();					
 		});
 
 		// Comportement si changement du contenu
-		listView.getItems().addListener( (ListChangeListener<Compte>) (c) -> {
+		tableView.getItems().addListener( (ListChangeListener<Compte>) (c) -> {
 			c.next();
 			// Après insertion d'un élément, le sélectionne
 			// Après suppression d'un élément, sélectionne le suivant
 			if ( c.wasAdded() || c.wasRemoved() ) {
-				listView.getSelectionModel().clearSelection();
-				listView.getSelectionModel().select( c.getFrom());
-				listView.getFocusModel().focus(c.getFrom());
-				listView.scrollTo( c.getFrom());
-				listView.requestFocus();
+				tableView.getSelectionModel().clearSelection();
+				tableView.getSelectionModel().select( c.getFrom());
+				tableView.getFocusModel().focus(c.getFrom());
+				tableView.scrollTo( c.getFrom());
+				tableView.requestFocus();
 			}
 		});
 	}
@@ -111,7 +116,7 @@ public class ControllerCompteListe  {
 
 	@FXML
 	private void doModifier() {
-		modelCompte.preparerModifier( listView.getSelectionModel().getSelectedItem() );
+		modelCompte.preparerModifier( tableView.getSelectionModel().getSelectedItem() );
 		managerGui.showView( EnumView.CompteForm2 );
 	}
 
@@ -119,7 +124,7 @@ public class ControllerCompteListe  {
 	private void doSupprimer() throws ExceptionValidation {
 		boolean reponse = managerGui.demanderConfirmation( "Confirmez-vous la suppresion ?" );
 		if ( reponse ) {
-			modelCompte.supprimer( listView.getSelectionModel().getSelectedItem() );
+			modelCompte.supprimer( tableView.getSelectionModel().getSelectedItem() );
 		}
 	}
 	
@@ -140,7 +145,7 @@ public class ControllerCompteListe  {
 	// Méthodes auxiliaires
 	
 	private void configurerBoutons() {
-		int nbSelections = listView.getSelectionModel().getSelectedItems().size();
+		int nbSelections = tableView.getSelectionModel().getSelectedItems().size();
 		if ( nbSelections == 1 ) {
 			buttonModifier.setDisable(false);
 			buttonSupprimer.setDisable(false);

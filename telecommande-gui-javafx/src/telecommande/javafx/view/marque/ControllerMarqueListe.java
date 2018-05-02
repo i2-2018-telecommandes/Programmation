@@ -17,19 +17,11 @@ import telecommande.javafx.view.IManagerGui;
 
 public class ControllerMarqueListe {
 
-
-
-
-
-
-
-	
 	
 	// Composants de la vue
 
 	@FXML
 	private ListView<Marque> listView ;
-	private TableColumn< Marque,String> columnnom;
 	
 	@FXML
 	private Button				buttonModifier;

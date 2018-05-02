@@ -19,11 +19,6 @@ import telecommande.javafx.view.IManagerGui;
 public class ControllerFournisseurListe {
 
 
-
-
-
-
-
 	
 	
 	// Composants de la vue
@@ -83,33 +78,6 @@ public class ControllerFournisseurListe {
 		columnmail.setCellValueFactory(cellData -> cellData.getValue().MailProperty());
 		columntelephone.setCellValueFactory(cellData -> cellData.getValue().TelephoneProperty());
 		
-		/*columnnom.setCellFactory( (list) -> {
-		    return new ListCell<Fournisseur,String>() {
-		        @Override
-		        protected void updateItem(Fournisseur item, boolean empty) {
-		            super.updateItem(item, empty);
-		            if (item == null) {
-		                setText(null);
-		            } else {
-		                setText(item.nomProperty().get() );
-		            }
-		        }
-		    };
-		});		
-
-		columnreference.setCellFactory( (list) -> {
-		    return new ListCell<Fournisseur,	String>() {
-		        @Override
-		        protected void updateItem(Fournisseur item, boolean empty) {
-		            super.updateItem(item, empty);
-		            if (item == null) {
-		                setText(null);
-		            } else {
-		                setText(item.referenceProperty().get() );
-		            }
-		        }
-		    };
-		});	*/
 		// Comportement si modificaiton de la séleciton
 		tableView.getSelectionModel().getSelectedItems().addListener( 
 				(ListChangeListener<Fournisseur>) (c) -> {
