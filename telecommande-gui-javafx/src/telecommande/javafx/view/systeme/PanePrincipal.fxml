@@ -25,16 +25,10 @@
                 <MenuItem fx:id="menuItemMarque" mnemonicParsing="false" onAction="#doAfficherListeMarque" text="Marque" />
                   <MenuItem fx:id="menuItemTeleviseur" mnemonicParsing="false" onAction="#doAfficherListeTeleviseur" text="Televiseur" />
                   <MenuItem fx:id="menuItemFournisseur" mnemonicParsing="false" onAction="#doAfficherListeFournisseur" text="Fournisseur" />
-<<<<<<< HEAD
                   <MenuItem mnemonicParsing="false" onAction="#doAfficherModeleTelecommande" text="Modele Telecommande" />
               </items>
             </Menu>
           <Menu fx:id="menuDonnees" mnemonicParsing="false" text="Administration">
-=======
-              </items>
-            </Menu>
-          <Menu fx:id="menuDonnees" mnemonicParsing="false" text="Gestion de données annexes">
->>>>>>> 8db2a1bbb19125a2c2e94e2e523eef8498e32271
                <items>
                   <MenuItem fx:id="menuItemComptes" mnemonicParsing="false" onAction="#doAfficherListeComptes" text="Comptes" />
                </items>
